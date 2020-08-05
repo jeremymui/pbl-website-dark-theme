@@ -1,0 +1,213 @@
+:root {
+  --yellow: #ffc107;
+  --muted-white: #dadada;
+  --nav-height: 50px;
+}
+
+@media (min-width: 576px) {
+  :root {
+    --nav-height: 70px;
+  }
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: "Segoe UI",Roboto,"Open Sans",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+nav.navbar {
+  background: black;
+}
+
+nav > div {
+  font-size: 1.3rem;
+}
+
+.pbl-logo {
+  padding-top: 10px;
+  height: var(--nav-height);
+  width: auto;
+}
+
+.dropdown-menu {
+  border: white 2px solid;
+  border-top: 0;
+  background-color: black;
+}
+
+.dropdown-item {
+  color: white;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: var(--yellow);
+  color: black;
+}
+
+.nav-item {
+  position: relative;
+  margin-right: 15px;
+}
+
+.nav-link {
+  padding-top: 0;
+}
+
+
+@media (min-width: 576px) {
+  .nav-item.active::before {
+    border-right-width: 3px;
+  }
+  .nav-item.active::before, .nav-item:hover::before {
+    transform: translateY(0);
+  }
+
+  .nav-item::before, .nav-item::before {
+    content: "";
+    height: calc(var(--nav-height) - 100%);
+    left: 50%;
+    bottom: 100%;
+    border-right: var(--yellow) 2px solid;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: 0.2s ease;
+  }
+}
+
+header > div.container-fluid {
+  height: calc(100vh - var(--nav-height));
+  margin-top: var(--nav-height);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* clip-path: polygon(0 0, 100% 0%, 100% 80%, 50% 100%, 0 80%); */
+}
+
+main {
+  margin-top: var(--nav-height);
+}
+
+.index-background {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("/assets/img/tech.jpg");
+  background-position: center;
+}
+
+.text-block {
+  position: relative;
+  bottom: -100px;
+  background-color: black;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.under-picture {
+  display: flex;
+  align-items: flex-end;
+  background-image:
+    url("/assets/img/IMG_9252.jpg");
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 80vh;
+}
+
+
+.committee {
+
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+
+#spy ul li a.nav-link.active {
+  font-weight: bold;
+  border-left: 3px solid;
+  padding-left: 7px;
+  color: var(--yellow);
+}
+
+#spy ul li a.nav-link:hover {
+  border-left: 2px solid;
+  padding-left: 8px;
+}
+
+#spy ul li a.nav-link {
+  color: inherit;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-left: 10px;
+  font-size: 0.9rem;
+}
+
+#spy {
+  top: 210px;
+  margin-top: 250px;
+}
+
+
+.bio-card {
+  box-shadow: 5px 10px 4px #888888;
+  border-width: thin !important;
+  position: relative;
+  /* clip from bottom of card but allow overflowing the top */
+  clip-path: polygon(0 -100%, 100% -100%, 100% 100%, 0% 100%);
+}
+
+.bio-rect-img {
+  display: block;
+}
+
+.invert-img {
+  filter: invert(100%);
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+  background-color: var(--dark);
+  user-select: none;
+  text-align: center;
+}
+
+.caption:hover {
+  transform: translateY(0);
+}
+
+.bio-visible {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--dark);
+}
+
+.bio-hidden {
+  max-height: 0px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  padding: 0 15px 0 15px;
+}
+
+.bio-hidden p {
+  text-align: left;
+}
+
+.caption:hover .bio-hidden {
+  max-height: 100%;
+}
+
+.role {
+  color: #aaaaaa;
+}

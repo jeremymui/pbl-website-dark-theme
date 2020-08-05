@@ -1,0 +1,68 @@
+/* new  */
+:root {
+  --yellow: #ffc107;
+  --light-yellow: #ffbf0085;
+
+  --nav-height: 75px;
+}
+
+body {
+  background-color: green;
+  color: white;
+  font-family: "Segoe UI",Roboto,"Open Sans",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.nav-item {
+  position: relative;
+}
+
+@media (min-width: 575.98px) {
+  .nav-item.active::before {
+    content: "";
+    height: var(--nav-height);
+    left: 50%;
+    bottom: 100%;
+    border-right: var(--yellow) 4px solid;
+    position: absolute;
+  }
+}
+
+.dropdown-menu {
+  border: var(--yellow) 4px solid;
+  border-top: 0;
+  background-color: #0000009e;
+}
+
+.header {
+  width: 100%;
+  /* height: 20rem; */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: var(--light-yellow);
+}
+
+.nav-link {
+  padding-top: 0;
+}
+
+nav.navbar {
+  background: lightblue;
+}
+
+nav > div {
+  height: var(--nav-height);
+  position: relative;
+}
+
+.pbl-logo {
+  padding-top: 10px;
+  height: 100%;
+  width: auto;
+}
+
+main {
+  margin-top: var(--nav-height);
+}
