@@ -22,11 +22,18 @@ body {
 }
 
 .black-navbar {
-  background: black;
+  background: black !important;
 }
 
 nav {
   transition: all 0.3s ease;
+  background: black;
+}
+
+@media (min-width: 576px) {
+  nav {
+    background: transparent;
+  }
 }
 
 nav > div {
@@ -126,6 +133,57 @@ main {
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
     url("/assets/img/tech.jpg");
   background-position: center;
+}
+
+.arrows {
+  position: absolute;
+  bottom: 50px;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.arrows:hover {
+  animation-play-state: paused;
+}
+
+#arrows::before, #arrows::after {
+  content: "";
+  width: 5vh;
+  max-width: 40px;
+  height: 5vh;
+  max-height: 40px;
+  border-right: 4px white solid;
+  border-bottom: 4px white solid;
+  transform: rotate(45deg);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#arrows::before {
+  bottom: 0;
+}
+#arrows::after {
+  bottom: 20px;
+}
+
+.bounce {
+    animation-name: bounce-7;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+@keyframes bounce-7 {
+    0%   { transform: scale(1,1)      translateY(0); }
+    10%  { transform: scale(1.1,.9)   translateY(0); }
+    30%  { transform: scale(.9,1.1)   translateY(-30px); }
+    50%  { transform: scale(1.05,.95) translateY(0); }
+    57%  { transform: scale(1,1)      translateY(-7px); }
+    64%  { transform: scale(1,1)      translateY(0); }
+    100% { transform: scale(1,1)      translateY(0); }
+}
+
+.banner {
+
 }
 
 .text-block {
