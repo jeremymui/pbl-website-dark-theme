@@ -87,6 +87,9 @@ footer {
 
 .nav-item {
   position: relative;
+}
+
+.nav-item:not(:last-child) {
   margin-right: 15px;
 }
 
