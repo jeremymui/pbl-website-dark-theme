@@ -107,8 +107,8 @@ footer {
     content: "";
     height: calc(var(--nav-height) - 100%);
     left: 50%;
-    bottom: 100%;
-    border-right: var(--yellow) 2px solid;
+    bottom: calc(100% + 1px); /* + 1px to fix rounding issues */
+    border-right: var(--yellow) 1px solid;
     position: absolute;
     transform: translateY(-100%);
     transition: 0.2s ease;
