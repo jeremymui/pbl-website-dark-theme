@@ -21,3 +21,10 @@ $("header nav .navbar-collapse a.dropdown-item").click(function() {
     $('.navbar-toggler').click();
   }
 })
+
+$("#arrows").click(function() {
+  $('html').animate({
+    scrollTop: $('.header').prop("scrollHeight")
+  });
+  return false;
+})
