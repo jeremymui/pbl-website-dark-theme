@@ -1,7 +1,7 @@
 // Scrolling Effect
 
 function controlNavbarColor() {
-  if ($(window).scrollTop() > 0.75 * window.innerHeight) {
+  if ($(window).scrollTop() > 1/5 * window.innerHeight) {
     $('header nav').addClass('black-navbar');
   } else {
     $('header nav').removeClass('black-navbar');
@@ -17,7 +17,7 @@ $(document).ready(function() {
 })
 
 $("header nav .navbar-collapse a.dropdown-item").click(function() {
-  if (window.matchMedia("(max-width: 991.98px)").matches) {
+  if (window.matchMedia("(max-width: 767px)").matches) {
     $('.navbar-toggler').click();
   }
 })
