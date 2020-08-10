@@ -23,6 +23,7 @@ $("header nav .navbar-collapse a.dropdown-item").click(function() {
 })
 
 $("#arrows").click(function() {
+  console.log("hi");
   $('html').animate({
     scrollTop: $('.header').prop("scrollHeight")
   });

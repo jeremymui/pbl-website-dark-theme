@@ -38,6 +38,10 @@ nav {
   background: black;
 }
 
+.navbar-dark .navbar-nav .nav-item.active .nav-link {
+  color: #fff;
+}
+
 @media (min-width: 768px) {
   nav {
     background: transparent;
@@ -58,6 +62,10 @@ nav {
 
 nav > div {
   font-size: 1.3rem;
+}
+
+button {
+  border-radius: 0 !important;
 }
 
 
