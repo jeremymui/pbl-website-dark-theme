@@ -45,13 +45,13 @@ nav {
 }
 
 @media screen and (max-width: 767.98px) {
-  .navbar-collapse {
+  .navbar-collapse.show {
     max-height: calc(100vh - 60px);
     overflow-y: auto;
   }
 }
 
-header div.container-fluid {
+.hero-content {
   margin-top: var(--nav-height);
   flex-grow: 1;
 }
