@@ -21,6 +21,14 @@ body {
   align-items: center;
 }
 
+.header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .black-navbar {
   background: black !important;
 }
@@ -129,15 +137,6 @@ footer {
   }
 }
 
-header > div.container-fluid {
-  height: 100vh;
-  /* height: calc(100vh - var(--nav-height)); */
-  /* margin-top: var(--nav-height); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* clip-path: polygon(5% 0, 95% 0%, 95% 85%, 50% 100%, 5% 85%); */
-}
-
 main {
   margin-top: var(--nav-height);
 }
@@ -149,30 +148,30 @@ main {
   background-position: center;
 }
 
+.arrows-container {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 1;
+  position: relative;
+}
+
 .arrows {
   position: absolute;
-  bottom: 50px;
   left: 50%;
-}
-
-#arrows::before, #arrows::after {
-  content: "";
-  width: 3vh;
-  max-width: 40px;
-  height: 3vh;
-  max-height: 40px;
-  border-left: 4px white solid;
-  border-bottom: 4px white solid;
-  transform: rotate(-45deg);
-  transform-origin: 0% 100%;
-  position: absolute;
-}
-
-#arrows::before {
+  display: flex;
+  align-items: center;
   bottom: 0;
+  width: inherit;
+  height: inherit;
 }
-#arrows::after {
-  bottom: 15px;
+
+svg {
+  height: 100%;
+  transform: translateX(-50%);
+  display: block;
+  margin: auto;
+  position: absolute;
+  left: 50%;
 }
 
 .bounce {
@@ -180,10 +179,6 @@ main {
     animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
     animation-duration: 2s;
     animation-iteration-count: infinite;
-}
-
-.bounce:hover {
-  animation-play-state: paused;
 }
 
 @keyframes bounce-7 {
