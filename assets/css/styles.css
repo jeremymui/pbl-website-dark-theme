@@ -27,6 +27,7 @@ body {
   flex-direction: column;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .black-navbar {
@@ -75,22 +76,25 @@ footer {
   justify-content: space-between;
 }
 
+.footer p {
+  margin-bottom: 0;
+}
+
 .footer-icon-link {
-  font-size: 1.75rem;
+  font-size: 1.85rem;
 }
 
 .footer-text {
+  font-size: 0.90rem;
+  text-decoration: none;
+}
+
+.footer-text2 {
   font-size: 0.85rem;
   text-decoration: none;
 }
 
-.footer1 {
-  text-align: left;
-}
 
-.footer2 {
-  text-align: right;
-}
 
 .pbl-logo {
   padding-top: 10px;
@@ -203,7 +207,72 @@ svg {
 
 }
 
-.text-block {
+/*
+    Block over block content
+*/
+
+.blocks-content {
+    margin-bottom: 2rem;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-position: center center;
+    -webkit-background-size: auto 100%;
+            background-size: auto 100%;
+}
+/*
+    .cover-content__text {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+        .cover-content__text > *:last-child {
+            margin-bottom: 0;
+        }
+
+        .cover-content .section__title {
+            margin-bottom: 3rem;
+        } */
+
+.vc_row[data-vc-full-width] {
+    -webkit-transition: opacity .5s ease;
+    -o-transition: opacity .5s ease;
+    transition: opacity .5s ease;
+    overflow: hidden;
+  }
+.vc_column-inner {
+      box-sizing: border-box;
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 100%;
+  }
+.wbp-wrapper {
+  box-sizing: border-box;
+}
+
+.vc_column_container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.cover-content--right {
+    background-position: right center;
+}
+.cover-content--left {
+    background-position: left center;
+}
+
+.vc_custom_1581793881517 {
+    padding-top: 80px !important;
+    padding-bottom: 50px !important;
+}
+
+.vc_row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+/* .text-block {
   position: relative;
   bottom: -100px;
   background-color: black;
@@ -211,17 +280,27 @@ svg {
   padding-bottom: 30px;
   padding-left: 30px;
   padding-right: 30px;
+} */
+
+.content__text {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #000;
 }
 
 .under-picture {
   display: flex;
   align-items: flex-end;
   background-image:
-    url("/assets/img/IMG_9252.jpg");
-  background-position: left;
+    url("https://plain.davidtovt.com/dark-color/wp-content/uploads/sites/5/2020/01/board-coffee.jpg");"
   background-size: 75vw;
   background-repeat: no-repeat;
-  height: 80vh;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  /* background-position: center center;
+  -webkit-background-size: cover;
+    background-size: cover; */
 }
 
 .banner {

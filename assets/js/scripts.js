@@ -1,21 +1,3 @@
-// Scrolling Effect
-
-function controlNavbarColor() {
-  if ($(window).scrollTop() > 1/5 * window.innerHeight) {
-    $('header nav').addClass('black-navbar');
-  } else {
-    $('header nav').removeClass('black-navbar');
-  }
-}
-
-$(window).on("scroll", function() {
-  controlNavbarColor();
-})
-
-$(document).ready(function() {
-  controlNavbarColor();
-})
-
 $("header nav .navbar-collapse a.dropdown-item").click(function() {
   if (window.matchMedia("(max-width: 767px)").matches) {
     $('.navbar-toggler').click();
@@ -23,9 +5,28 @@ $("header nav .navbar-collapse a.dropdown-item").click(function() {
 })
 
 $("#arrows").click(function() {
-  console.log("hi");
   $('html').animate({
     scrollTop: $('.header').prop("scrollHeight")
   });
   return false;
 })
+
+
+let options = {
+    rootMargin: "-70px", //max navbar height
+    threshold: 1.0
+}
+
+function controlNavbarColor(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      $('header nav').removeClass('black-navbar');
+    } else {
+      $('header nav').addClass('black-navbar');
+    }
+  });
+}
+
+let navObserver = new IntersectionObserver(controlNavbarColor, options);
+let target = document.querySelector('.hero-content .mx-auto')
+navObserver.observe(target)
