@@ -69,13 +69,6 @@ button {
   border-radius: 0 !important;
 }
 
-
-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .footer p {
   margin-bottom: 0;
 }
