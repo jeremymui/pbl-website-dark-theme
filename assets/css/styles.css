@@ -329,6 +329,11 @@ svg {
   right: 0;
 }
 
+.pillar-img {
+  width: 100%;
+  max-width: 100px;
+}
+
 .committee {
   padding-top: calc(var(--nav-height) + 15px);
   margin-bottom: calc(var(--nav-height) / 2);
