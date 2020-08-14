@@ -301,6 +301,34 @@ svg {
     padding-bottom: 50px !important;
 }
 
+.brackets {
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+.brackets::before, .brackets::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+
+.brackets::before {
+  border-left: 3px var(--yellow) solid;
+  border-top: 3px var(--yellow) solid;
+  top: 0;
+  left: 0;
+}
+
+.brackets::after {
+  border-right: 3px var(--yellow) solid;
+  border-bottom: 3px var(--yellow) solid;
+  bottom: 0;
+  right: 0;
+}
+
 .committee {
   padding-top: calc(var(--nav-height) + 15px);
   margin-bottom: calc(var(--nav-height) / 2);
