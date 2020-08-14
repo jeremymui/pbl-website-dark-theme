@@ -61,6 +61,12 @@ nav {
   flex-grow: 1;
 }
 
+@media (max-width: 576px) {
+  header h1.display-1 {
+    font-size: 3.5rem;
+  }
+}
+
 nav > div {
   font-size: 1.3rem;
 }
