@@ -375,6 +375,14 @@ svg {
   color: var(--yellow);
 }
 
+#spy a.nav-link::before {
+  visibility: hidden;
+  content: attr(title);
+  font-weight: bold;
+  display: block;
+  height: 0;
+}
+
 #spy a.nav-link:hover {
   border-left: var(--yellow) 2px solid;
   padding-left: 8px;
