@@ -373,7 +373,7 @@ svg {
 
 #spy a.nav-link::before {
   visibility: hidden;
-  content: attr(title);
+  content: attr(data-title);
   font-weight: bold;
   display: block;
   height: 0;
