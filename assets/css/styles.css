@@ -340,6 +340,29 @@ svg {
   max-width: 100px;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo>a {
+  width: 100%;
+}
+
+.logo-img {
+  width: 100%;
+}
+
+.alumni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 15px;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+
+
 .committee {
   padding-top: calc(var(--nav-height) + 15px);
   margin-bottom: calc(var(--nav-height) / 2);
