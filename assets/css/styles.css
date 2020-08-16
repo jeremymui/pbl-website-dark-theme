@@ -151,7 +151,7 @@ main {
 .index-background {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-    url("assets/img/tech.jpg");
+    url("../img/tech.jpg");
   background-position: center;
 }
 
@@ -202,6 +202,10 @@ svg {
 
 }
 
+.video-banner {
+  max-width: 1500px;
+}
+
 /*
     Block over block content
 */
@@ -250,10 +254,10 @@ svg {
     padding-right: 0;
 }
 
-.cover-content--right {
+.layered--right {
     background-position: right center;
 }
-.cover-content--left {
+.layered--left {
     background-position: left center;
 }
 
@@ -284,22 +288,48 @@ svg {
     background: #000;
 }
 
+@media (min-width: 992px) {
+  .content__text {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 100px;
+    /* min-width: 70vh;
+    min-height: 50vh; */
+  }
+}
+
 .under-picture {
   display: flex;
   align-items: flex-end;
   background-image:
-    url("https://plain.davidtovt.com/dark-color/wp-content/uploads/sites/5/2020/01/board-coffee.jpg");"
-  background-size: 75vw;
+    url("https://plain.davidtovt.com/dark-color/wp-content/uploads/sites/5/2020/01/board-coffee.jpg");
   background-repeat: no-repeat;
   padding-top: 100px;
   padding-bottom: 100px;
-  /* background-position: center center;
+  background-position: center center;
   -webkit-background-size: cover;
-    background-size: cover; */
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .under-picture {
+    background-size: 75vw;
+    background-position: left;
+  }
+}
+
+@media (min-width: 992px) {
+  .under-picture {
+    background-size: 75vw;
+    background-position: left;
+    min-height: 100vh;
+    /* min-height: calc(100vh - var(--nav-height)); */
+  }
 }
 
 .banner {
-    padding-top: 160px !important;
+    padding-top: 50px !important;
     padding-bottom: 50px !important;
 }
 
