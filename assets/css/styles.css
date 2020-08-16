@@ -151,7 +151,7 @@ main {
 .index-background {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-    url("/assets/img/tech.jpg");
+    url("assets/img/tech.jpg");
   background-position: center;
 }
 
