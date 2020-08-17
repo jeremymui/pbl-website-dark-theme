@@ -30,3 +30,20 @@ function controlNavbarColor(entries, observer) {
 let navObserver = new IntersectionObserver(controlNavbarColor, options);
 let target = document.querySelector('.hero-content .mx-auto')
 navObserver.observe(target)
+
+function fadeIn(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("animatedFadeInUp");
+      observer.unobserve(entry.target);
+    }
+  });
+}
+
+let fadeInOptions = {
+  threshold: 0.25
+};
+
+let fadeInObserver = new IntersectionObserver(fadeIn, fadeInOptions);
+let fadeInTargets = document.querySelectorAll('.toFadeIn');
+fadeInTargets.forEach(target => fadeInObserver.observe(target));
