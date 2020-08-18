@@ -1,4 +1,5 @@
 ErrorDocument 404 /404.html
+RedirectMatch 404 /\.git
 Redirect /executive.html /leadership.html#executive
 Redirect /internal-networking.html /leadership.html#internal-networking
 Redirect /upper-division.html /leadership.html#client-teams
