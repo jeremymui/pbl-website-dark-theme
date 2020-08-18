@@ -297,9 +297,12 @@ svg {
     /* min-width: 70vh;
     min-height: 50vh; */
   }
+  h1 {
+    font-size: 3.5em;
+  }
 }
 
-.under-picture {
+.under-picture--left {
   display: flex;
   align-items: flex-end;
   background-image:
@@ -313,16 +316,45 @@ svg {
 }
 
 @media (min-width: 768px) {
-  .under-picture {
+  .under-picture--left {
     background-size: 75vw;
     background-position: left;
   }
 }
 
 @media (min-width: 992px) {
-  .under-picture {
+  .under-picture--left {
     background-size: 75vw;
     background-position: left;
+    min-height: 100vh;
+    /* min-height: calc(100vh - var(--nav-height)); */
+  }
+}
+
+.under-picture--right {
+  display: flex;
+  align-items: flex-end;
+  background-image:
+    url("https://plain.davidtovt.com/dark-color/wp-content/uploads/sites/5/2020/01/board-coffee.jpg");
+  background-repeat: no-repeat;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-position: center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .under-picture--right {
+    background-size: 75vw;
+    background-position: right;
+  }
+}
+
+@media (min-width: 992px) {
+  .under-picture--right {
+    background-size: 75vw;
+    background-position: right;
     min-height: 100vh;
     /* min-height: calc(100vh - var(--nav-height)); */
   }
