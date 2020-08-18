@@ -148,10 +148,17 @@ main {
   margin: calc(1.5 * var(--nav-height)) 0;
 }
 
-.index-background {
+.index-background-home {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-    url("../img/tech.jpg");
+    url("../assets/img/header/homeheader.jpg");
+  background-position: center;
+}
+
+.index-background-about {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("../assets/img/header/aboutusheader.jpg");
   background-position: center;
 }
 
@@ -446,7 +453,16 @@ svg {
   transition: all 0.3s ease;
 }
 
-.logo:hover {
+.scale-on-hover {
+  transition: all 0.3s ease;
+}
+
+.scale-on-hover img {
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.scale-on-hover:hover {
   transform: scale(1.15);
 }
 
