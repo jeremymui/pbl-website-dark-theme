@@ -148,17 +148,45 @@ main {
   margin: calc(1.5 * var(--nav-height)) 0;
 }
 
-.index-background-home {
+.index-background {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-    url("../assets/img/header/homeheader.jpg");
+    url("../img/header/homeheader.jpg");
   background-position: center;
 }
 
-.index-background-about {
+.about-background {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-    url("../assets/img/header/aboutusheader.jpg");
+    url("../img/header/aboutusheader.jpg");
+  background-position: center;
+}
+
+.committees-background {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("../img/header/meetpblheader1.jpg");
+  background-position: center;
+}
+
+.leadership-background {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("../img/header/meetpblheader2.jpg");
+  background-position: center;
+}
+
+.services-background {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("../img/header/ourservicesheader.jpg");
+  background-position: center;
+}
+
+.join-background {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("../img/header/joinusheader.jpg");
   background-position: center;
 }
 
