@@ -197,7 +197,7 @@ main {
 .page-not-found-background {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-    url("/assets/img/tech.jpg");
+    url("/assets/img/header/homeheader.jpg");
   background-position: center;
 }
 
@@ -287,54 +287,6 @@ svg {
   max-width: 1500px;
 }
 
-/*
-    Block over block content
-*/
-
-.blocks-content {
-    margin-bottom: 2rem;
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-position: center center;
-    -webkit-background-size: auto 100%;
-            background-size: auto 100%;
-}
-/*
-    .cover-content__text {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        padding: 20px;
-    }
-
-        .cover-content__text > *:last-child {
-            margin-bottom: 0;
-        }
-
-        .cover-content .section__title {
-            margin-bottom: 3rem;
-        } */
-
-.vc_row[data-vc-full-width] {
-    -webkit-transition: opacity .5s ease;
-    -o-transition: opacity .5s ease;
-    transition: opacity .5s ease;
-    overflow: hidden;
-  }
-.vc_column-inner {
-      box-sizing: border-box;
-      padding-left: 15px;
-      padding-right: 15px;
-      width: 100%;
-  }
-.wbp-wrapper {
-  box-sizing: border-box;
-}
-
-.vc_column_container {
-    padding-left: 0;
-    padding-right: 0;
-}
-
 .layered--right {
     background-position: right center;
 }
@@ -416,8 +368,6 @@ svg {
 .under-picture--right {
   display: flex;
   align-items: flex-end;
-  /* background-image:
-    url("https://plain.davidtovt.com/dark-color/wp-content/uploads/sites/5/2020/01/board-coffee.jpg"); */
   background-repeat: no-repeat;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -437,8 +387,7 @@ svg {
   .under-picture--right {
     background-size: 75vw;
     background-position: right;
-    min-height: 100vh;
-    /* min-height: calc(100vh - var(--nav-height)); */
+    min-height: calc(100vh - var(--nav-height));
   }
 }
 
@@ -510,8 +459,6 @@ svg {
   align-items: stretch;
 }
 
-
-
 .committee {
   padding-top: calc(var(--nav-height) + 15px);
   margin-bottom: calc(var(--nav-height) / 2);
@@ -561,7 +508,7 @@ svg {
 
 .bg-dark {
     background-color: #242627!important;
-} 
+}
 
 .bio-rect-img {
   display: block;
