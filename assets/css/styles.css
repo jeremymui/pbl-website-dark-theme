@@ -1,6 +1,7 @@
 :root {
   --yellow: #ffc107;
   --muted-white: #aaaaaa;
+  --dark: #242627;
   --nav-height: 50px;
 }
 
@@ -77,6 +78,8 @@ button {
 
 .footer p {
   margin-bottom: 0;
+  color: #999
+  background: #111
 }
 
 .footer-icon-link {
@@ -85,6 +88,7 @@ button {
 
 .footer-text {
   font-size: 0.90rem;
+  color: #AAAAAA
 }
 
 .footer-text2 {
@@ -151,7 +155,49 @@ main {
 .index-background {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-    url("../img/tech.jpg");
+    url("../img/header/homeheader.jpg");
+  background-position: center;
+}
+
+.about-background {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("../img/header/aboutusheader.jpg");
+  background-position: center;
+}
+
+.committees-background {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("../img/header/meetpblheader1.jpg");
+  background-position: center;
+}
+
+.leadership-background {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("../img/header/meetpblheader2.jpg");
+  background-position: center;
+}
+
+.services-background {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("../img/header/ourservicesheader.jpg");
+  background-position: center;
+}
+
+.join-background {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("../img/header/joinusheader.jpg");
+  background-position: center;
+}
+
+.page-not-found-background {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("/assets/img/tech.jpg");
   background-position: center;
 }
 
@@ -197,6 +243,41 @@ svg {
     64%  { transform: scale(1,1)      translateY(0); }
     100% { transform: scale(1,1)      translateY(0); }
 }
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0,40px,0);
+  }
+
+  to {
+    transform: translate3d(0,0,0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      transform: translate3d(0,40px,0);
+  }
+
+  to {
+      transform: translate3d(0,0,0);
+      opacity: 1;
+  }
+}
+
+.toFadeIn {
+  opacity: 0;
+}
+
+.animatedFadeInUp {
+    animation-name: fadeInUp;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
 
 .banner {
 
@@ -271,16 +352,6 @@ svg {
     margin-right: -15px;
 }
 
-/* .text-block {
-  position: relative;
-  bottom: -100px;
-  background-color: black;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
-} */
-
 .content__text {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -293,31 +364,37 @@ svg {
     padding-top: 50px;
     padding-bottom: 50px;
     padding-left: 50px;
-    padding-right: 100px;
+    padding-right: 50px;
     /* min-width: 70vh;
     min-height: 50vh; */
   }
 
-  h1 {
-    font-size: 3.5em;
-  }
-
-  p {
-    font-size:
+  .content__text h1 {
+    font-size: 3em;
   }
 }
 
 .under-picture--left {
   display: flex;
   align-items: flex-end;
-  background-image:
-    url("https://plain.davidtovt.com/dark-color/wp-content/uploads/sites/5/2020/01/board-coffee.jpg");
   background-repeat: no-repeat;
   padding-top: 100px;
   padding-bottom: 100px;
   background-position: center center;
   -webkit-background-size: cover;
   background-size: cover;
+}
+
+.whatwedo-background {
+  background-image: url("../img/whatwedo.jpg");
+}
+
+.whypbl-background {
+  background-image: url("../img/whypbl.jpg");
+}
+
+.orgstructure-background {
+  background-image: url("../img/orgstruct.jpg");
 }
 
 @media (min-width: 768px) {
@@ -339,8 +416,8 @@ svg {
 .under-picture--right {
   display: flex;
   align-items: flex-end;
-  background-image:
-    url("https://plain.davidtovt.com/dark-color/wp-content/uploads/sites/5/2020/01/board-coffee.jpg");
+  /* background-image:
+    url("https://plain.davidtovt.com/dark-color/wp-content/uploads/sites/5/2020/01/board-coffee.jpg"); */
   background-repeat: no-repeat;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -409,7 +486,11 @@ svg {
   transition: all 0.3s ease;
 }
 
-.logo:hover {
+.scale-on-hover {
+  transition: all 0.3s ease;
+}
+
+.scale-on-hover:hover {
   transform: scale(1.15);
 }
 
@@ -477,6 +558,10 @@ svg {
   /* clip from bottom of card but allow overflowing the top */
   clip-path: polygon(0 -100%, 100% -100%, 100% 100%, 0% 100%);
 }
+
+.bg-dark {
+    background-color: #242627!important;
+} 
 
 .bio-rect-img {
   display: block;
