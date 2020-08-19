@@ -297,8 +297,13 @@ svg {
     /* min-width: 70vh;
     min-height: 50vh; */
   }
+
   h1 {
     font-size: 3.5em;
+  }
+
+  p {
+    font-size:
   }
 }
 
