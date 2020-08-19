@@ -1,3 +1,4 @@
+Options -Indexes
 ErrorDocument 404 /404.html
 RedirectMatch 404 /\.git
 Redirect /executive.html /leadership.html#executive
