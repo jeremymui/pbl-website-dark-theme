@@ -348,16 +348,6 @@ svg {
     margin-right: -15px;
 }
 
-/* .text-block {
-  position: relative;
-  bottom: -100px;
-  background-color: black;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
-} */
-
 .content__text {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -370,11 +360,12 @@ svg {
     padding-top: 50px;
     padding-bottom: 50px;
     padding-left: 50px;
-    padding-right: 100px;
+    padding-right: 50px;
     /* min-width: 70vh;
     min-height: 50vh; */
   }
-  h1 {
+
+  .content__text h1 {
     font-size: 3.5em;
   }
 }
@@ -382,14 +373,20 @@ svg {
 .under-picture--left {
   display: flex;
   align-items: flex-end;
-  background-image:
-    url("https://plain.davidtovt.com/dark-color/wp-content/uploads/sites/5/2020/01/board-coffee.jpg");
   background-repeat: no-repeat;
   padding-top: 100px;
   padding-bottom: 100px;
   background-position: center center;
   -webkit-background-size: cover;
   background-size: cover;
+}
+
+.whatwedo-background {
+  background-image: url("../img/whatwedo.jpg");
+}
+
+.whypbl-background {
+  background-image: url("../img/ourmission.jpg");
 }
 
 @media (min-width: 768px) {
@@ -411,8 +408,8 @@ svg {
 .under-picture--right {
   display: flex;
   align-items: flex-end;
-  background-image:
-    url("https://plain.davidtovt.com/dark-color/wp-content/uploads/sites/5/2020/01/board-coffee.jpg");
+  /* background-image:
+    url("https://plain.davidtovt.com/dark-color/wp-content/uploads/sites/5/2020/01/board-coffee.jpg"); */
   background-repeat: no-repeat;
   padding-top: 100px;
   padding-bottom: 100px;
