@@ -27,9 +27,13 @@ function controlNavbarColor(entries, observer) {
   });
 }
 
-let navObserver = new IntersectionObserver(controlNavbarColor, options);
-let target = document.querySelector('.hero-content .mx-auto')
-navObserver.observe(target)
+if ('IntersectionObserver' in window) {
+  let navObserver = new IntersectionObserver(controlNavbarColor, options);
+  let target = document.querySelector('.hero-content .mx-auto')
+  navObserver.observe(target)
+} else {
+  $('header nav').addClass('black-navbar');
+}
 
 function fadeIn(entries, observer) {
   entries.forEach(entry => {
@@ -44,6 +48,10 @@ let fadeInOptions = {
   threshold: 0.25
 };
 
-let fadeInObserver = new IntersectionObserver(fadeIn, fadeInOptions);
-let fadeInTargets = document.querySelectorAll('.toFadeIn');
-fadeInTargets.forEach(target => fadeInObserver.observe(target));
+if ('IntersectionObserver' in window) {
+  let fadeInObserver = new IntersectionObserver(fadeIn, fadeInOptions);
+  let fadeInTargets = document.querySelectorAll('.toFadeIn');
+  fadeInTargets.forEach(target => fadeInObserver.observe(target));
+} else {
+  $('.toFadeIn').addClass('animatedFadeInUp')
+}
