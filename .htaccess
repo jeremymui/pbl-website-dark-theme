@@ -1,6 +1,20 @@
+# Hiding non-public content
 Options -Indexes
-ErrorDocument 404 /404.html
 RedirectMatch 404 /\.git
-Redirect /executive.html /leadership.html#executive
-Redirect /internal-networking.html /leadership.html#internal-networking
-Redirect /upper-division.html /leadership.html#client-teams
+
+# 404 Page
+ErrorDocument 404 /404.html
+
+# Permanent redirects from outdated google search results
+RedirectPermanent /executive.html /leadership.html#executive
+RedirectPermanent /internal-networking.html /leadership.html#internal-networking
+RedirectPermanent /upper-division.html /leadership.html#client-teams
+
+# Spring 2021 Priority Recruitment
+Redirect /exec-app https://docs.google.com/forms/d/e/1FAIpQLScP0KLni42S8EMwxVC0cotX3IRnrepiwHh0BUTyuW6bAqFXxw/viewform
+Redirect /officer-return https://docs.google.com/forms/d/e/1FAIpQLSfqyH7bupCfn0SeQ2AiiBOKY-pjuQP3b8vXjqYjVDEJYC8ZNA/viewform
+Redirect /officer-app https://docs.google.com/forms/d/e/1FAIpQLSefn81XXAc6BV5yQIV-OCr5lDMyxyadmAa2twfj7n1_c-BMpQ/viewform
+Redirect /member-app https://docs.google.com/forms/d/e/1FAIpQLSfM4EMfxaXacqLtxIMmkiI_9Dk967jmAIKqp5Q0phOfsbzLfQ/viewform
+
+# Spring 2021 Recruitment
+Redirect /interest https://docs.google.com/forms/d/e/1FAIpQLSc5q1V9dG1v38RLc3H88yzbQnP7Hd3mhff0HcPcpU6HHQ0Acw/viewform
