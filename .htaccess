@@ -5,6 +5,17 @@ RedirectMatch 404 /\.git
 # 404 Page
 ErrorDocument 404 /404.html
 
+# Tabling
+RedirectPermanent /tabling http://berkeleypbl-tech.github.io
+RedirectPermanent /tabling-form https://docs.google.com/forms/d/e/1FAIpQLSeoPyKLBG6bKTjkHWIUyr_OBSOZ7f-SRd-C9gfW23XVj1p5Kg/viewform
+
+Redirect /apparel https://forms.gle/dcpDeo8qY5gn63Zg9
+Redirect /shoutouts https://forms.gle/3QyXiRJZm8m8e1pC7
+Redirect /questionnaire https://forms.gle/LL1VSTey4G1NE9XN9
+Redirect /vote https://forms.gle/sUmespt6qjreHaYy7
+Redirect /superlatives https://forms.gle/NfDtemZd8Dqrs2GK7
+Redirect /big-little-feedback https://forms.gle/xbUQ1KgCQuRnCyZd6
+
 # Permanent redirects from outdated google search results
 RedirectPermanent /executive.html /leadership.html#executive
 RedirectPermanent /internal-networking.html /leadership.html#internal-networking
@@ -18,3 +29,8 @@ Redirect /member-app https://docs.google.com/forms/d/e/1FAIpQLSfM4EMfxaXacqLtxIM
 
 # Spring 2021 Recruitment
 Redirect /interest https://docs.google.com/forms/d/e/1FAIpQLSc5q1V9dG1v38RLc3H88yzbQnP7Hd3mhff0HcPcpU6HHQ0Acw/viewform
+Redirect /coffee https://forms.gle/YnLxLHDHJTtChr9T7
+Redirect /info1 https://berkeley.zoom.us/meeting/register/tJIpd-igpjwiGddrpUEAXT93OKvF5BkANLFJ
+Redirect /info2 https://berkeley.zoom.us/meeting/register/tJMrdu-orDMvG9JZo9Ad98gBFKAYHScuiMef
+Redirect /mixer https://berkeley.zoom.us/meeting/register/tJYuduigrzouHdZr5Kc3s4YDX-NAPVR36I2l
+Redirect /discord https://discord.gg/eDCrPkyF7V
