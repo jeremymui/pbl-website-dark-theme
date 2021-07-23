@@ -647,3 +647,20 @@ svg {
 .timeline-grid a {
   font-size: 1.5rem;
 }
+
+.timeline-logo {
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.timeline-logo>a {
+  width: 100%;
+}
+
+.timeline-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
