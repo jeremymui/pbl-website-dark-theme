@@ -653,10 +653,13 @@ svg {
   margin-top: auto;
   margin-bottom: auto;
   position: relative;
+  max-height: 85%;
+  max-width: 85%;
 }
 
 .client-timeline-logo>a {
-  width: 100%;
+  width: 90%;
+  top: -7%;
 }
 
 .client-timeline-logo-grid {
