@@ -78,8 +78,8 @@ button {
 
 .footer p {
   margin-bottom: 0;
-  color: #999
-  background: #111
+  color: #999;
+  background: #111;
 }
 
 .footer-icon-link {
@@ -633,7 +633,6 @@ svg {
   margin-left: 20px;
   margin-right: 20px;
   line-height: 2.5rem;
-  text-align: right;
 }
 
 .timeline-grid h5 {
@@ -646,4 +645,129 @@ svg {
 
 .timeline-grid a {
   font-size: 1.5rem;
+}
+
+.client-timeline-logo {
+  display: flex;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  margin-bottom: auto;
+  position: relative;
+  max-height: 85%;
+  max-width: 85%;
+}
+
+.client-timeline-logo>a {
+  width: 90%;
+  top: -7%;
+}
+
+.client-timeline-logo-grid {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(auto-fit, minmax(13%, 1fr)); /*120px*/
+  gap: 5%; /*30px*/
+  justify-content: space-evenly;
+  align-items: center;
+  height: 110px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.client-timeline-marker {
+  grid-row-end: span 2;
+  position: relative;
+}
+
+.client-timeline-marker-last {
+  grid-row-end: span 2;
+  position: relative;
+}
+
+@media (min-width: 576px) {
+  .client-timeline-marker {
+    grid-row-end: unset;
+    grid-column: 2;
+  }
+  .client-timeline-marker-last {
+    grid-row-end: unset;
+    grid-column: 2;
+  }
+  .client-timeline-date {
+    margin-right: 20px;
+    text-align: right;
+    line-height: 2.5rem;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+/* bubbles */
+.client-timeline-marker::before {
+  height: 1rem;
+  width: 1rem;
+  /* top: 1.25rem; */
+  top: 3.5rem;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: relative;
+  border-radius: 100%;
+  background: #ffc107;
+  content: "";
+  display: block;
+}
+
+.client-timeline-marker-last::before {
+  height: 1rem;
+  width: 1rem;
+  /* top: 1.25rem; */
+  top: 3.5rem;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: relative;
+  border-radius: 100%;
+  background: #ffc107;
+  content: "";
+  display: block;
+}
+
+/* vertical line */
+.client-timeline-marker::after {
+  background-color: #ffc107;
+  content: "";
+  width: 3px;
+  left: 0;
+  right: 0;
+  /* top: calc(24px + 1rem); */
+  top: calc(24px + 5rem);
+  bottom: 0;
+  height: 100%;
+  margin: auto;
+  position: absolute;
+}
+
+.client-timeline-marker-last::after {
+  background-color: #ffc107;
+  content: "";
+  width: 3px;
+  left: 0;
+  right: 0;
+  /* top: calc(24px + 1rem); */
+  top: calc(24px + 5rem);
+  bottom: 0;
+  height: 0%;
+  margin: auto;
+  position: absolute;
+}
+
+.client-timeline-date {
+  margin-right: 20px;
+  text-align: right;
+  line-height: 2.5rem;
+  margin-top: auto;
+  margin-bottom: auto;
 }
