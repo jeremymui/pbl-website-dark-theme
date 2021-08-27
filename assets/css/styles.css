@@ -525,6 +525,7 @@ svg {
 
 .bio-rect-img {
   display: block;
+  max-height: 100%;
 }
 
 .invert-img {
