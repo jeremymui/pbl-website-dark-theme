@@ -28,9 +28,17 @@ Redirect /officer-app https://docs.google.com/forms/d/e/1FAIpQLSefn81XXAc6BV5yQI
 Redirect /member-app https://docs.google.com/forms/d/e/1FAIpQLSfM4EMfxaXacqLtxIMmkiI_9Dk967jmAIKqp5Q0phOfsbzLfQ/viewform
 
 # Spring 2021 Recruitment
-Redirect /interest https://docs.google.com/forms/d/e/1FAIpQLSc5q1V9dG1v38RLc3H88yzbQnP7Hd3mhff0HcPcpU6HHQ0Acw/viewform
-Redirect /coffee https://forms.gle/YnLxLHDHJTtChr9T7
-Redirect /info1 https://berkeley.zoom.us/meeting/register/tJIpd-igpjwiGddrpUEAXT93OKvF5BkANLFJ
-Redirect /info2 https://berkeley.zoom.us/meeting/register/tJMrdu-orDMvG9JZo9Ad98gBFKAYHScuiMef
-Redirect /mixer https://berkeley.zoom.us/meeting/register/tJYuduigrzouHdZr5Kc3s4YDX-NAPVR36I2l
-Redirect /discord https://discord.gg/eDCrPkyF7V
+# Redirect /interest https://docs.google.com/forms/d/e/1FAIpQLSc5q1V9dG1v38RLc3H88yzbQnP7Hd3mhff0HcPcpU6HHQ0Acw/viewform
+# Redirect /coffee https://forms.gle/YnLxLHDHJTtChr9T7
+# Redirect /info1 https://berkeley.zoom.us/meeting/register/tJIpd-igpjwiGddrpUEAXT93OKvF5BkANLFJ
+# Redirect /info2 https://berkeley.zoom.us/meeting/register/tJMrdu-orDMvG9JZo9Ad98gBFKAYHScuiMef
+# Redirect /mixer https://berkeley.zoom.us/meeting/register/tJYuduigrzouHdZr5Kc3s4YDX-NAPVR36I2l
+# Redirect /discord https://discord.gg/eDCrPkyF7V
+
+Spring 2022 Recruitment
+Redirect /interest https://forms.gle/W3DGRFxwdRDBEDbd8
+Redirect /coffeechats https://forms.gle/rM2x4AGgr1mjr6Ba9
+Redirect /info1 https://berkeley.zoom.us/meeting/register/tJUodOiqpjgiG9y1dZHpDbwPDc7GFtq1Kwxv
+Redirect /info2 https://berkeley.zoom.us/meeting/register/tJcrcOisrzsjGtwGwcjaVZ7yacOFUtob3c6K
+Redirect /mixer https://berkeley.zoom.us/meeting/register/tJ0pcuytrzssE91phFyJYhRsf3w4cxERJZUS
+Redirect /diversity https://berkeley.zoom.us/meeting/register/tJYtc-yupzwrGtbpeytFtRRAaTk9amB4HeE3
