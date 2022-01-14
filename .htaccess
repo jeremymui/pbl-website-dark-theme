@@ -35,7 +35,7 @@ Redirect /member-app https://docs.google.com/forms/d/e/1FAIpQLSfM4EMfxaXacqLtxIM
 # Redirect /mixer https://berkeley.zoom.us/meeting/register/tJYuduigrzouHdZr5Kc3s4YDX-NAPVR36I2l
 # Redirect /discord https://discord.gg/eDCrPkyF7V
 
-Spring 2022 Recruitment
+# Spring 2022 Recruitment
 Redirect /interest https://forms.gle/W3DGRFxwdRDBEDbd8
 Redirect /coffeechats https://forms.gle/rM2x4AGgr1mjr6Ba9
 Redirect /info1 https://berkeley.zoom.us/meeting/register/tJUodOiqpjgiG9y1dZHpDbwPDc7GFtq1Kwxv
