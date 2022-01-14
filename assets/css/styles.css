@@ -477,6 +477,10 @@ svg {
   margin-bottom: calc(var(--nav-height) / 2);
 }
 
+.interest-form {
+  padding-top: 10px;
+}
+
 #spy a.nav-link.active, #spy a.nav-link.active:hover {
   font-weight: bold;
   border-left: 3px solid;
