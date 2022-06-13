@@ -659,7 +659,19 @@ svg {
   margin-bottom: auto;
   position: relative;
   max-height: 85%;
-  max-width: 85%;
+  max-width: 100%;
+  align-items: center;
+}
+
+.client-timeline-logo-18 {
+  display: flex;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  margin-bottom: auto;
+  position: relative;
+  max-height: 55%;
+  max-width: 45%;
+  align-items: center;
 }
 
 .client-timeline-logo>a {
