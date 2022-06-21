@@ -69,7 +69,7 @@ nav {
 }
 
 nav > div {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
 }
 
 button {
@@ -163,6 +163,13 @@ main {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
     url("../img/header/aboutusheader.jpg");
+  background-position: center;
+}
+
+.careers-background {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("../img/header/careersheader.jpg");
   background-position: center;
 }
 
@@ -632,6 +639,7 @@ svg {
 
 .timeline-event {
   margin-left: 20px;
+  justify-items: center;
 }
 
 .timeline-date {
@@ -841,3 +849,120 @@ svg {
   outline-color: #34A853;
 }
 
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  background-color: #000000;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: #000000;
+  float: right;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 7px 10px;
+  transition: 0.3s;
+  font-size: 17px;
+  color: #ffffff;
+  border-right: 1px solid #ffffff;
+  line-height: 1px;
+}
+
+.tab button:first-child {
+  border-right: none;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  color: #ffc107;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #000000;
+  border-top: none;
+  color: #ffffff;
+}
+
+.tabcontent {
+  animation: fadeEffect 1.5s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+#box {
+  background-color: #ffc107;
+  padding: 5px;
+  color: #000000;
+  font-weight: bold;
+  font-size: large;
+}
+
+hr.new1 {
+  border: 1px solid #ffc107;
+}
+
+.header2 {
+  color: #ffc107;
+  font-size: 1.6rem;
+  font-weight: lighter;
+}
+
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: grey;
+  table-layout: fixed;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table {
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+}
+
+table.Names {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+th {
+  font-weight: normal;
+  font-style: italic;
+}
+
+td {
+  font-weight: normal;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+tr { 
+  border: solid;
+  border-width: 1px 0;
+}
+
+tr:first-child {
+  border-top: none;
+}
+tr:last-child {
+  border-bottom: none;
+}
