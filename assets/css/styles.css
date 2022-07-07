@@ -69,7 +69,7 @@ nav {
 }
 
 nav > div {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
 }
 
 button {
@@ -163,6 +163,13 @@ main {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
     url("../img/header/aboutusheader.jpg");
+  background-position: center;
+}
+
+.careers-background {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("../img/header/careersheader.jpg");
   background-position: center;
 }
 
@@ -632,6 +639,7 @@ svg {
 
 .timeline-event {
   margin-left: 20px;
+  justify-items: center;
 }
 
 .timeline-date {
@@ -659,7 +667,19 @@ svg {
   margin-bottom: auto;
   position: relative;
   max-height: 85%;
-  max-width: 85%;
+  max-width: 100%;
+  align-items: center;
+}
+
+.client-timeline-logo-18 {
+  display: flex;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  margin-bottom: auto;
+  position: relative;
+  max-height: 55%;
+  max-width: 45%;
+  align-items: center;
 }
 
 .client-timeline-logo>a {
@@ -775,4 +795,174 @@ svg {
   line-height: 2.5rem;
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.icons {
+  display: flex;
+  column-gap: 25px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 26px;
+  color: #fff;
+  border-radius: 50%;
+  outline: 2px solid #fff;
+  transition-property:
+  outline-offset, outline-color,
+  background-color;
+  transition-duration: .25s;
+}
+
+.icon:hover {
+  outline-offset: 4px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.icon--instagram:hover {
+  background-image: 
+  radial-gradient(circle at 30% 107%,
+  #fdf497 0%, #fdf497 5%,
+  #fd5949 45%, #d6249f 60%,
+  #285AEB 90%);
+  outline-color: #a02d76;
+}
+
+.icon--facebook:hover {
+  background-color: #0080FB;
+  outline-color: #0080FB;
+}
+
+.icon--youtube:hover {
+  background-color: #FF0000;
+  outline-color: #FF0000;
+}
+
+.icon--gmail:hover {
+  background-color: #34A853;
+  outline-color: #34A853;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  background-color: #000000;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: #000000;
+  float: right;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 7px 10px;
+  transition: 0.3s;
+  font-size: 17px;
+  color: #ffffff;
+  border-right: 1px solid #ffffff;
+  line-height: 1px;
+}
+
+.tab button:first-child {
+  border-right: none;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  color: #ffc107;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #000000;
+  border-top: none;
+  color: #ffffff;
+}
+
+.tabcontent {
+  animation: fadeEffect 1.5s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+#box {
+  background-color: #ffc107;
+  padding: 5px;
+  color: #000000;
+  font-weight: bold;
+  font-size: large;
+}
+
+hr.new1 {
+  border: 1px solid #ffc107;
+}
+
+.header2 {
+  color: #ffc107;
+  font-size: 1.6rem;
+  font-weight: lighter;
+}
+
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: grey;
+  table-layout: fixed;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table {
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+}
+
+table.Names {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+th {
+  font-weight: normal;
+  font-style: italic;
+}
+
+td {
+  font-weight: normal;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+tr { 
+  border: solid;
+  border-width: 1px 0;
+}
+
+tr:first-child {
+  border-top: none;
+}
+tr:last-child {
+  border-bottom: none;
 }
