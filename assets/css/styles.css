@@ -978,3 +978,18 @@ tr:first-child {
 tr:last-child {
   border-bottom: none;
 }
+
+.sponsors-img {
+  width: 100%;
+  max-width: 150px;
+  margin: auto;    
+  display: block;
+  justify-content: center;
+}
+
+h1 span{font-weight:normal}
+
+.abt {
+  padding-top: calc(var(--nav-height) + 15px);
+  margin-bottom: calc(var(--nav-height) / 2);
+}
