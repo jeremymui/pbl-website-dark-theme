@@ -799,7 +799,10 @@ svg {
 
 .icons {
   display: flex;
+  align-items: center;
+  justify-content: center;
   column-gap: 25px;
+  padding: 1em;
 }
 
 .icon {
@@ -864,10 +867,19 @@ svg {
   cursor: pointer;
   padding: 7px 10px;
   transition: 0.3s;
-  font-size: 17px;
   color: #ffffff;
   border-right: 1px solid #ffffff;
   line-height: 1px;
+}
+
+@media screen and (min-width: 320px) {
+  .tab button { font-size: 13px; }
+}
+@media screen and (min-width: 680px) {
+  .tab button { font-size: 17px; }
+}
+@media screen and (min-width: 1024px) {
+  .tab button { font-size: 17px; }
 }
 
 .tab button:first-child {
@@ -965,4 +977,19 @@ tr:first-child {
 }
 tr:last-child {
   border-bottom: none;
+}
+
+.sponsors-img {
+  width: 100%;
+  max-width: 150px;
+  margin: auto;    
+  display: block;
+  justify-content: center;
+}
+
+h1 span{font-weight:normal}
+
+.abt {
+  padding-top: calc(var(--nav-height) + 15px);
+  margin-bottom: calc(var(--nav-height) / 2);
 }
