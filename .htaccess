@@ -36,9 +36,13 @@ Redirect /member-app https://docs.google.com/forms/d/e/1FAIpQLSfM4EMfxaXacqLtxIM
 # Redirect /discord https://discord.gg/eDCrPkyF7V
 
 # Spring 2022 Recruitment
-Redirect /interest https://forms.gle/W3DGRFxwdRDBEDbd8
-Redirect /coffeechats https://forms.gle/rM2x4AGgr1mjr6Ba9
-Redirect /info1 https://berkeley.zoom.us/meeting/register/tJUodOiqpjgiG9y1dZHpDbwPDc7GFtq1Kwxv
-Redirect /info2 https://berkeley.zoom.us/meeting/register/tJcrcOisrzsjGtwGwcjaVZ7yacOFUtob3c6K
-Redirect /mixer https://berkeley.zoom.us/meeting/register/tJ0pcuytrzssE91phFyJYhRsf3w4cxERJZUS
-Redirect /diversity https://berkeley.zoom.us/meeting/register/tJYtc-yupzwrGtbpeytFtRRAaTk9amB4HeE3
+# Redirect /interest https://forms.gle/W3DGRFxwdRDBEDbd8
+# Redirect /coffeechats https://forms.gle/rM2x4AGgr1mjr6Ba9
+# Redirect /info1 https://berkeley.zoom.us/meeting/register/tJUodOiqpjgiG9y1dZHpDbwPDc7GFtq1Kwxv
+# Redirect /info2 https://berkeley.zoom.us/meeting/register/tJcrcOisrzsjGtwGwcjaVZ7yacOFUtob3c6K
+# Redirect /mixer https://berkeley.zoom.us/meeting/register/tJ0pcuytrzssE91phFyJYhRsf3w4cxERJZUS
+# Redirect /diversity https://berkeley.zoom.us/meeting/register/tJYtc-yupzwrGtbpeytFtRRAaTk9amB4HeE3
+
+# Spring 2023 Recruitment
+Redirect /interest https://docs.google.com/forms/d/e/1FAIpQLSfWh4ONFt_BLDrBFyXdw-5EBhETzcEDxS1KQ9BIZd-vwmTuyA/viewform
+Redirect /coffeechats https://docs.google.com/forms/d/e/1FAIpQLSccvYUwCNUbMjTVHfHjls7yxtKAs_ivTmkuaqGjtPcxWhAW8Q/viewform
