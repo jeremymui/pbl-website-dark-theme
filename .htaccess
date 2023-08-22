@@ -44,5 +44,9 @@ Redirect /member-app https://docs.google.com/forms/d/e/1FAIpQLSfM4EMfxaXacqLtxIM
 # Redirect /diversity https://berkeley.zoom.us/meeting/register/tJYtc-yupzwrGtbpeytFtRRAaTk9amB4HeE3
 
 # Spring 2023 Recruitment
-Redirect /interest https://docs.google.com/forms/d/e/1FAIpQLSfWh4ONFt_BLDrBFyXdw-5EBhETzcEDxS1KQ9BIZd-vwmTuyA/viewform
-Redirect /coffeechats https://docs.google.com/forms/d/e/1FAIpQLSccvYUwCNUbMjTVHfHjls7yxtKAs_ivTmkuaqGjtPcxWhAW8Q/viewform
+# Redirect /interest https://docs.google.com/forms/d/e/1FAIpQLSfWh4ONFt_BLDrBFyXdw-5EBhETzcEDxS1KQ9BIZd-vwmTuyA/viewform
+# Redirect /coffeechats https://docs.google.com/forms/d/e/1FAIpQLSccvYUwCNUbMjTVHfHjls7yxtKAs_ivTmkuaqGjtPcxWhAW8Q/viewform
+
+# Fall 2023 Recruitment
+Redirect /interest https://docs.google.com/forms/d/e/1FAIpQLScr8NWIOtvcOyvY2mXVQ4HHH5Xk1P-cVG5_NbIiOXiVzoLbww/viewform
+Redirect /coffeechats https://tinyurl.com/pblcoffeechat
