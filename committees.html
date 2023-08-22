@@ -1,403 +1,809 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-156541522-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156541522-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      gtag("config", "UA-156541522-1");
+    </script>
 
-    gtag('config', 'UA-156541522-1');
-  </script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000" />
 
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="theme-color" content="#000">
+    <title>Committees | Berkeley PBL</title>
+    <link rel="canonical" href="https://pbl.berkeley.edu/committees" />
 
-  <title>Committees | Berkeley PBL</title>
-  <link rel="canonical" href="https://pbl.berkeley.edu/committees" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/styles.css" rel="stylesheet" />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">
-  <link href="assets/css/styles.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
-
-</head>
-
-<body data-spy="scroll" data-target="#spy" data-offset="400">
-  <header class="header committees-background">
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top pt-0 pb-2 nav-transition" id="mainNav">
-      <div class="container d-flex align-items-end">
-        <a class="navbar-brand-trigger" href="./">
-          <img src="assets/img/pbl-logo.png" class="pbl-logo" alt="Berkeley PBL">
-        </a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="./">Home</a>
-            </li>
-            <li class="nav-item">
-              <div class="dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  About
-                </a>
-                <div class="dropdown-menu text-light">
-                  <a class="dropdown-item" href="about.html#structure">Organization Structure</a>
-                  <a class="dropdown-item" href="about.html#values">Our Values</a>
-                  <a class="dropdown-item" href="about.html#community">Our Community</a>
-                  <a class="dropdown-item" href="about.html#alumni">Our Alumni</a>
-                  <a class="dropdown-item" href="about.html#sponsors">Our Sponsors</a>
+  <body data-spy="scroll" data-target="#spy" data-offset="400">
+    <header class="header committees-background">
+      <nav
+        class="navbar navbar-expand-md navbar-dark fixed-top pt-0 pb-2 nav-transition"
+        id="mainNav"
+      >
+        <div class="container d-flex align-items-end">
+          <a class="navbar-brand-trigger" href="./">
+            <img
+              src="assets/img/pbl-logo.png"
+              class="pbl-logo"
+              alt="Berkeley PBL"
+            />
+          </a>
+          <button
+            class="navbar-toggler navbar-toggler-right"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="./">Home</a>
+              </li>
+              <li class="nav-item">
+                <div class="dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    About
+                  </a>
+                  <div class="dropdown-menu text-light">
+                    <a class="dropdown-item" href="about.html#structure"
+                      >Organization Structure</a
+                    >
+                    <a class="dropdown-item" href="about.html#values"
+                      >Our Values</a
+                    >
+                    <a class="dropdown-item" href="about.html#community"
+                      >Our Community</a
+                    >
+                    <a class="dropdown-item" href="about.html#alumni"
+                      >Our Alumni</a
+                    >
+                    <a class="dropdown-item" href="about.html#sponsors"
+                      >Our Sponsors</a
+                    >
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="services.html">Consulting</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="careers.html">Careers</a>
-            </li>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html">Consulting</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="careers.html">Careers</a>
+              </li>
 
-            <li class="nav-item active">
-              <div class="dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Committees
-                </a>
-                <div class="dropdown-menu text-light">
-                  <a class="dropdown-item" href="committees.html#bio-tech">Biotech</a>
-                  <a class="dropdown-item" href="committees.html#consulting">Consulting</a>
-                  <a class="dropdown-item" href="committees.html#finance">Finance</a>
-                  <a class="dropdown-item" href="committees.html#marketing">Marketing</a>
-                  <a class="dropdown-item" href="committees.html#technology">Technology</a>
+              <li class="nav-item active">
+                <div class="dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Committees
+                  </a>
+                  <div class="dropdown-menu text-light">
+                    <a class="dropdown-item" href="committees.html#bio-tech"
+                      >Biotech</a
+                    >
+                    <a class="dropdown-item" href="committees.html#consulting"
+                      >Consulting</a
+                    >
+                    <a class="dropdown-item" href="committees.html#finance"
+                      >Finance</a
+                    >
+                    <a class="dropdown-item" href="committees.html#marketing"
+                      >Marketing</a
+                    >
+                    <a class="dropdown-item" href="committees.html#technology"
+                      >Technology</a
+                    >
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <li class="nav-item">
-              <div class="dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Leadership
-                </a>
-                <div class="dropdown-menu text-light">
-                  <a class="dropdown-item" href="leadership.html#executive">Executive</a>
-                  <a class="dropdown-item" href="leadership.html#internal-networking">Internal Networking</a>
-                  <a class="dropdown-item" href="leadership.html#client-teams">Client Teams</a>
+              <li class="nav-item">
+                <div class="dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Leadership
+                  </a>
+                  <div class="dropdown-menu text-light">
+                    <a class="dropdown-item" href="leadership.html#executive"
+                      >Executive</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="leadership.html#internal-networking"
+                      >Internal Networking</a
+                    >
+                    <a class="dropdown-item" href="leadership.html#client-teams"
+                      >Client Teams</a
+                    >
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="apply.html">Join Us</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class="container text-light text-center vertical-center hero-content">
-      <div class="mx-auto toFadeIn">
-        <h1 class="display-1 p-1">Committees</h1>
-        <p class="lead p-1">Future Business Leaders of America - Phi Beta Lambda</p>
-      </div>
-    </div>
-    <div class="arrows-container container bounce">
-      <a href="#" id="arrows">
-        <svg viewBox="0 0 50 40">
-          <polyline points="0,25 25,25 25,0" fill="none" stroke="white" transform="rotate(45,25,25)" />
-          <polyline points="0,25 25,25 25,0" fill="none" stroke="white" transform="translate(0,10) rotate(45,25,25)" />
-        </svg>
-      </a>
-    </div>
-  </header>
-  <main>
-    <div class="container-lg">
-      <div class="row">
-        <div class="col-md-auto order-md-2 d-none d-md-block">
-          <nav id="spy" class="sticky-top navbar-dark ml-4" data-toggle="toc">
-            <ul class="nav navbar-nav">
-              <li><a class="nav-link" href="#bio-tech" data-title="Bio-Tech">Biotech</a></li>
-              <li><a class="nav-link" href="#consulting" data-title="Consulting">Consulting</a></li>
-              <li><a class="nav-link" href="#finance" data-title="Finance">Finance</a></li>
-              <li><a class="nav-link" href="#marketing" data-title="Marketing">Marketing</a></li>
-              <li><a class="nav-link" href="#technology" data-title="Technology">Technology</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="apply.html">Join Us</a>
+              </li>
             </ul>
-          </nav>
-        </div>
-        <div class="col-12 col-sm-8 col-md col-lg-8 offset-sm-2 offset-md-1 offset-lg-1 order-md-1">
-          <section class="committee" id="bio-tech">
-            <div class="brackets">
-              <h1 class="display-4 text-center">Biotech</h1>
-              <p class="pb-0">
-                As our world faces yet another pandemic, the biotechnology industry is more important than ever as it can develop revolutionary breakthroughs in medicine. The Biotech curriculum will provide members with a holistic view of the business strategies utilized in the biotechnology industry. Through collaborative projects, real-world case studies, and interactive workshops, members will gain an all-encompassing understanding of the intersection of the life sciences and business.
-              </p>
-            </div>
-            <div class="row">
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card border border-dark">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/emily.jpg" alt="Emily Yang portrait">
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Emily Yang</h5>
-                        <span class="h6 role">Biotech Chair</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>Hello! My name is Emily Yang, and I am majoring in Public Health and Business. In terms of professional interests, I'm looking to enter the healthcare management or consulting industry, or maybe even going into policy later on. My passions also lie within implementing change within the healthcare industry to account for systemic racism and social determinants of health. On a personal level, I'm very interested in content creation and digital design/fashion, as I also have a YouTube channel. I also love exploring new places and having deep conversations, and I'm always down for a talk! </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/emilyyang0312/"><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card border border-dark">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/alana.jpg" alt="Alana Yang portrait">
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Alana Yang</h5>
-                        <span class="h6 role">Biotech Chair</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>Hello! My name is Alana, and I'm a sophomore at UC Berkeley majoring in Molecular and Cell Biology and Data Science. My professional interests include the biotech industry, computational biology, and the field of genomics. I'm most fascinated by gene editing, which I've been involved in the research of through labs at Berkeley and Stanford. Outside of school, you can find me sketching, going on runs, and exploring San Francisco with my friends. </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/alana-yang/"><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-          </section>
-          <section class="committee" id="consulting">
-            <div class="brackets">
-              <h1 class="display-4 text-center">Consulting</h1>
-              <p class="pb-0">
-                The Consulting curriculum will focus on providing members with knowledge and skills to become a competent consultant. Members will learn about consulting fundamentals such as SWOT analysis and how to put together a case deck through our interactive workshops.
-              </p>
-            </div>
-            <div class="row">
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card border border-dark">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/jocelyn.jpg" alt="Jocelyn Quach portrait">
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Jocelyn Quach</h5>
-                        <span class="h6 role">Consulting Chair</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>Hi! I'm Jocelyn, and my professional lies within the fields of consulting and marketing. On my free time I like to read, play tennis and hang out with friends!</p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/jocelynquach"><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card border border-dark">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/michael.jpg" alt="Michael Wu portrait">
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Michael Wu</h5>
-                        <span class="h6 role">Consulting Chair</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>Hi! My name is Michael and I'm a sophomore studying Business Administration and Data Science. Professionally, I am interested in consulting and product management. In my free time I enjoy swimming, travel, and hanging out with friends.</p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/mikejwu88/"><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-          </section>
-          <section class="committee" id="finance">
-            <div class="brackets">
-              <h1 class="display-4 text-center">Finance</h1>
-              <p class="pb-0">
-                The Finance curriculum aims to help you learn the basic principles of finance and prepare you for a future career in the financial services industry. We will start from basic accounting to valuation to eventually building your own investment portfolio. Our curriculum is built from a list of financial technical interview questions, which by the end of the semester, you will have mastered.
-              </p>
-            </div>
-            <div class="row">
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card border border-dark">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/carrieho.png" alt="Carrie Ho portrait">
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Carrie Ho</h5>
-                        <span class="h6 role">Finance Chair</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>Hi everyone! My name is Carrie and I'm currently a second year studying Economics and Data Science. My professional interests are consulting, banking, and entrepreneurship. I like to swim, travel, and go shopping with my friends. In my free time, you can catch me eating at new restaurants and going on drives!</p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/-carrie-ho/"><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card border border-dark">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/emlin.jpg" alt="Emlin Lu portrait">
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Emlin Lu</h5>
-                        <span class="h6 role">Finance Chair</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>Hi everyone! My name is Emlin and I am a sophomore studying Applied Math and Economics. My professional interests lay in financial modeling and quantitive finance so I am looking to pursue a career in quantitive trading or private equity. In my free time, you can find me playing spikeball on the glade, going to Warriors games, or trying new food places with friends!</p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/emlin-lu/"><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-          </section>
-          <section class="committee" id="marketing">
-            <div class="brackets">
-              <h1 class="display-4 text-center">Marketing</h1>
-              <p class="pb-0">
-                In a world where countless products enter the market daily, marketing aims to connect brands with the right consumers. The Marketing curriculum teaches a variety of business strategies utilized in specific industry landscapes. Through collaborative projects and interactive workshops, members will gain hands-on experience to prepare them for future professional opportunities. Some topics covered by Marketing include decking, data visualization, strategic analysis, and case interviews.
-              </p>
-            </div>
-            <div class="row">
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card border border-dark">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/jason.jpg" alt="Jason Tao portrait">
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Jason Tao</h5>
-                        <span class="h6 role">Marketing Chair</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>Hey! My name is Jason and I'm a senior studying EECS and Business Administration. My professional interests lie in software engineering, entrepreneurship, data analytics and artificial intelligence. Outside of school and work, I love cry-banging at music festivals, building my dumpy at the gym, carrying other PBL members in League and Valorant, and taking ankles in soccer.</p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/jason-tao-910/"><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card border border-dark">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/christinexu.jpg" alt="Christine Xu portrait">
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Christine Xu</h5>
-                        <span class="h6 role">Marketing Chair</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>Hey! My name is Christine Xu and I'm a sophomore studying Cognitive Science & intended Business Administration. My professional interests lay in the intersection between business and tech -- product management and consulting -- and slowly getting into UX/UI. Some of my personal interests include film photography, Formula 1 racing, tennis, & working out -- oh and of course eating sushi & napping! </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/christineexu/"><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-          </section>
-          <section class="committee" id="technology">
-            <div class="brackets">
-              <h1 class="display-4 text-center">Technology</h1>
-              <p class="pb-0">
-                As an integral part of a company’s infrastructure, successful use of technology precedes the success of a business itself. In the Tech curriculum, we bridge the gap between software and business, providing a foundational understanding of how important technology is within corporations. Members will be taught the basics of programming through Python, data analytics, and web development. Throughout the curriculum, members will also get the opportunity to build their own games and test their newfound skills. These hands-on projects and workshops will allow members to gain a comprehensive understanding of technology that can be brought into the real world.
-              </p>
-            </div>
-            <div class="row">
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card border border-dark">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/alexjang.jpg" alt="Alex Jang portrait">
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Alex Jang</h5>
-                        <span class="h6 role">Technology Chair</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>Hello! My name is Alex and I am currently a Junior studying Computer Science and minoring in Data Science. Most of my professional background lies in Software Engineering and Machine Learning and hope to continue onto learning and working towards a career in Deep/Reinforcement Learning. When it comes to hobbies, I am very proactive about finding the best restaurants, going to the gym, and going to concerts/raves so feel free to reach out anytime if any of those resonates with you as well!</p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/alexander-jang02/"><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card border border-dark">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/prokkawn.jpg" alt="Prokkawn Majumdar portrait">
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Prokkawn Majumdar</h5>
-                        <span class="h6 role">Technology Chair</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>Hi! My name is Prokkawn and I am currently a Junior studying Electrical Engineering and Computer Science. My professional background is largely in software engineering but I also am very interested in Robotics and Machine Learning. For hobbies I love to go to the gym, play sports like soccer, basketball, and volleyball which is my new obsession. I also game a bit, mostly Valorant, and just love hanging out with friends. I'm always down to have fun!</p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/prokkawn-majumdar/"><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>
-  </main>
-  <footer class="footer-text text-center">
-    <div class="bg-dark w-100 py-3">
-      <div class="container-sm bg-dark">
-        <div class="row align-items-center mx-0">
-          <div class="col-auto mx-auto my-1">
-            <a href="https://www.ocf.berkeley.edu" target="_blank">
-              <img src="https://www.ocf.berkeley.edu/hosting-logos/ocf-hosted-penguin-dark.svg" alt="Hosted by the OCF" style="border: 0;">
-            </a>
           </div>
-          <div class="col-md mx-auto my-1 px-0 mr-lg-5 text-md-left">
-            <p class="m-0">
-              We are a student group acting independently of the University of California. We take full responsibility for our organization and this web site.
-            </p>
+        </div>
+      </nav>
+      <div
+        class="container text-light text-center vertical-center hero-content"
+      >
+        <div class="mx-auto toFadeIn">
+          <h1 class="display-1 p-1">Committees</h1>
+          <p class="lead p-1">
+            Future Business Leaders of America - Phi Beta Lambda
+          </p>
+        </div>
+      </div>
+      <div class="arrows-container container bounce">
+        <a href="#" id="arrows">
+          <svg viewBox="0 0 50 40">
+            <polyline
+              points="0,25 25,25 25,0"
+              fill="none"
+              stroke="white"
+              transform="rotate(45,25,25)"
+            />
+            <polyline
+              points="0,25 25,25 25,0"
+              fill="none"
+              stroke="white"
+              transform="translate(0,10) rotate(45,25,25)"
+            />
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main>
+      <div class="container-lg">
+        <div class="row">
+          <div class="col-md-auto order-md-2 d-none d-md-block">
+            <nav id="spy" class="sticky-top navbar-dark ml-4" data-toggle="toc">
+              <ul class="nav navbar-nav">
+                <li>
+                  <a class="nav-link" href="#bio-tech" data-title="Bio-Tech"
+                    >Biotech</a
+                  >
+                </li>
+                <li>
+                  <a class="nav-link" href="#consulting" data-title="Consulting"
+                    >Consulting</a
+                  >
+                </li>
+                <li>
+                  <a class="nav-link" href="#finance" data-title="Finance"
+                    >Finance</a
+                  >
+                </li>
+                <li>
+                  <a class="nav-link" href="#marketing" data-title="Marketing"
+                    >Marketing</a
+                  >
+                </li>
+                <li>
+                  <a class="nav-link" href="#technology" data-title="Technology"
+                    >Technology</a
+                  >
+                </li>
+              </ul>
+            </nav>
           </div>
-          <div class ="col-auto mx-auto" >
-          <div class="icons">
-            <a class="icon icon--instagram" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.instagram.com/berkeleypbl/"><i class="fab fa-instagram"></i></a>
-            <a class="icon icon--facebook" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.facebook.com/berkeleypbl"><i class="fab fa-facebook-f"></i></a>
-            <a class="icon icon--youtube" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.youtube.com/user/BerkeleyPBL"><i class="fab fa-youtube"></i></a>
-            <a class="icon icon--gmail" target="_blank" rel="noopener noreferrer" class="text-warning" href="mailto:execs@pbl.berkeley.edu"><i class="far fa-envelope"></i></a>
+          <div
+            class="col-12 col-sm-8 col-md col-lg-8 offset-sm-2 offset-md-1 offset-lg-1 order-md-1"
+          >
+            <section class="committee" id="bio-tech">
+              <div class="brackets">
+                <h1 class="display-4 text-center">Biotech</h1>
+                <p class="pb-0">
+                  As our world faces yet another pandemic, the biotechnology
+                  industry is more important than ever as it can develop
+                  revolutionary breakthroughs in medicine. The Biotech
+                  curriculum will provide members with a holistic view of the
+                  business strategies utilized in the biotechnology industry.
+                  Through collaborative projects, real-world case studies, and
+                  interactive workshops, members will gain an all-encompassing
+                  understanding of the intersection of the life sciences and
+                  business.
+                </p>
+              </div>
+              <div class="row">
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card border border-dark">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/vinay.jpg"
+                      alt="Vinay Raman portrait"
+                    />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Vinay Raman</h5>
+                          <span class="h6 role">Biotech Chair</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hi! My name is Vinay Raman and I'm a sophomore
+                            studying Molecular and Cell Biology and Business
+                            Administration. I plan to either pursue medicine and
+                            become a neurosurgeon, or enter the finance
+                            industry, specifically focusing on investment
+                            banking and private wealth management. I'm a huge
+                            soccer player, so I'm always down for a pickup game,
+                            and I also love to explore new places around San
+                            Francisco!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-warning"
+                            href="https://www.linkedin.com/in/vinayraman11/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card border border-dark">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/yash.jpg"
+                      alt="Yash Rondla portrait"
+                    />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Yash Rondla</h5>
+                          <span class="h6 role">Biotech Chair</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hi! I'm Yash, currently a junior at UC Berkeley! I
+                            am studying economics and data science! My interests
+                            lie in sustainability, venture capital, and finance.
+                            In my free time, I love watching movies, going out
+                            to eat, and playing lacrosse.
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-warning"
+                            href="https://www.linkedin.com/in/yashrondla/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </section>
+            <section class="committee" id="consulting">
+              <div class="brackets">
+                <h1 class="display-4 text-center">Consulting</h1>
+                <p class="pb-0">
+                  The Consulting curriculum will focus on providing members with
+                  knowledge and skills to become a competent consultant. Members
+                  will learn about consulting fundamentals such as SWOT analysis
+                  and how to put together a case deck through our interactive
+                  workshops.
+                </p>
+              </div>
+              <div class="row">
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card border border-dark">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/sree.jpg"
+                      alt="Sreeram Ranga portrait"
+                    />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Sreeram Ranga</h5>
+                          <span class="h6 role">Consulting Chair</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            "I'm an engineer who loves startups, project
+                            management, circuit design, and technology
+                            management. I have experience in technical and
+                            business roles at both startups and large
+                            corporations. When I'm not working, I enjoy hiking,
+                            rock climbing, tennis, and going on long drives with
+                            friends. I'm also an avid reader and I love learning
+                            new things. I'm also a bit of a nerd, and I love
+                            talking about tech. If you're ever looking for
+                            someone to geek out with, I'm your guy!"
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-warning"
+                            href="https://www.linkedin.com/in/sreeramranga/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card border border-dark">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/casey.jpg"
+                      alt="Casey Shu portrait"
+                    />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Casey Shu</h5>
+                          <span class="h6 role">Consulting Chair</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hey guys! My name is Casey, and I am a junior
+                            doubling in Data Science and Environmental Economics
+                            and Policy. My professional interests are currently
+                            somewhere scattered in between finance and data
+                            science, and I am super interested in sustainability
+                            and environment. In my free time, I like to do
+                            artistic things like painting and crocheting, and I
+                            love to watch horror movies with my friends!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-warning"
+                            href="https://www.linkedin.com/in/caseyshu/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </section>
+            <section class="committee" id="finance">
+              <div class="brackets">
+                <h1 class="display-4 text-center">Finance</h1>
+                <p class="pb-0">
+                  The Finance curriculum aims to help you learn the basic
+                  principles of finance and prepare you for a future career in
+                  the financial services industry. We will start from basic
+                  accounting to valuation to eventually building your own
+                  investment portfolio. Our curriculum is built from a list of
+                  financial technical interview questions, which by the end of
+                  the semester, you will have mastered.
+                </p>
+              </div>
+              <div class="row">
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card border border-dark">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/ethan2.jpg"
+                      alt="Ethan Luu portrait"
+                    />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Ethan Luu</h5>
+                          <span class="h6 role">Finance Chair</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hi everyone! My name is Ethan and I am a sophomore
+                            studying Business Administration and Data Science.
+                            My professional interests lay in financial modeling
+                            and quantitive finance so I am looking to pursue a
+                            career in investment banking, quantitive trading,
+                            private equity, or venture capital. In my free time,
+                            you can find me playing tennis, lifting at RSF, or
+                            practicing piano!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-warning"
+                            href="https://www.linkedin.com/in/ethan--luu"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card border border-dark">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/sahil.jpg"
+                      alt="Sahil Malhotra portrait"
+                    />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Sahil Malhotra</h5>
+                          <span class="h6 role">Finance Chair</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            I'm interested in Investment Banking and Private
+                            Equity. In my free time I like to workout, play
+                            chess, and watch movies.
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-warning"
+                            href="https://www.linkedin.com/in/sahilmalhotra/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </section>
+            <section class="committee" id="marketing">
+              <div class="brackets">
+                <h1 class="display-4 text-center">Marketing</h1>
+                <p class="pb-0">
+                  In a world where countless products enter the market daily,
+                  marketing aims to connect brands with the right consumers. The
+                  Marketing curriculum teaches a variety of business strategies
+                  utilized in specific industry landscapes. Through
+                  collaborative projects and interactive workshops, members will
+                  gain hands-on experience to prepare them for future
+                  professional opportunities. Some topics covered by Marketing
+                  include decking, data visualization, strategic analysis, and
+                  case interviews.
+                </p>
+              </div>
+              <div class="row">
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card border border-dark">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/jamie.jpg"
+                      alt="Jamie Nguyen portrait"
+                    />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Jamie Nguyen</h5>
+                          <span class="h6 role">Marketing Chair</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hey! My name is Jamie Nguyen and I’m a sophomore
+                            studying Media Studies and intended Cognitive
+                            Science. My professional interests lay in the
+                            intersection between Marketing and UI/UX Design.
+                            Whereas for personal interests I love music, content
+                            creation, thrifting, and fashion as I have my own
+                            small second hand business! Feel free to reach out
+                            if any of this resonates with you or if you want a
+                            personal stylist ⸜(｡˃ ᵕ ˂ )⸝
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-warning"
+                            href="https://www.linkedin.com/in/jamienguyen04"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card border border-dark">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/lily.jpg"
+                      alt="Lily Nguyen portrait"
+                    />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Lily Nguyen</h5>
+                          <span class="h6 role">Marketing Chair</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hi everyone! My name is Lily Nguyen and I am a
+                            junior studying Cognitive Science with a minor in
+                            Data Science. My professional interests lie in
+                            Marketing, Consumer Analytics, Consulting and
+                            Product Management. In my free time, I love cooking
+                            and baking, going to concerts, and picnicking on the
+                            glade!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-warning"
+                            href="https://www.linkedin.com/in/lilyjnguyen25/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </section>
+            <section class="committee" id="technology">
+              <div class="brackets">
+                <h1 class="display-4 text-center">Technology</h1>
+                <p class="pb-0">
+                  As an integral part of a company’s infrastructure, successful
+                  use of technology precedes the success of a business itself.
+                  In the Tech curriculum, we bridge the gap between software and
+                  business, providing a foundational understanding of how
+                  important technology is within corporations. Members will be
+                  taught the basics of programming through Python, data
+                  analytics, and web development. Throughout the curriculum,
+                  members will also get the opportunity to build their own games
+                  and test their newfound skills. These hands-on projects and
+                  workshops will allow members to gain a comprehensive
+                  understanding of technology that can be brought into the real
+                  world.
+                </p>
+              </div>
+              <div class="row">
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card border border-dark">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/amitoj.jpg"
+                      alt="Amitoj Singh portrait"
+                    />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Amitoj Singh</h5>
+                          <span class="h6 role">Technology Chair</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hey! My name is Amitoj and I’m currently a Sophomore
+                            studying Electrical Engineering and Computer Science
+                            and Business Administration. My goals are oriented
+                            towards a career in Machine Learning and Software
+                            Engineering. I am very inclined towards research
+                            especially with generative AI and large language
+                            models. My hobbies include working out, playing
+                            tennis, and just going out and hanging out with my
+                            friends. Reach out with any questions you may have!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-warning"
+                            href="https://www.linkedin.com/in/amitoj111/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card border border-dark">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/aditi.jpg"
+                      alt="Prokkawn Majumdar portrait"
+                    />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Aditi Chatterjee</h5>
+                          <span class="h6 role">Technology Chair</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hi! My name is Aditi and I’m a current third year
+                            studying Data Science and Computer Science. My
+                            professional interests include big data, AI/ML, and
+                            product/ software development. In my free time, you
+                            can catch me trying out new restaurants in the Bay,
+                            shopping with friends, or reading the latest novel
+                            from my Goodreads list.
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-warning"
+                            href="https://www.linkedin.com/in/aditichatty/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
+    </main>
+    <footer class="footer-text text-center">
+      <div class="bg-dark w-100 py-3">
+        <div class="container-sm bg-dark">
+          <div class="row align-items-center mx-0">
+            <div class="col-auto mx-auto my-1">
+              <a href="https://www.ocf.berkeley.edu" target="_blank">
+                <img
+                  src="https://www.ocf.berkeley.edu/hosting-logos/ocf-hosted-penguin-dark.svg"
+                  alt="Hosted by the OCF"
+                  style="border: 0"
+                />
+              </a>
+            </div>
+            <div class="col-md mx-auto my-1 px-0 mr-lg-5 text-md-left">
+              <p class="m-0">
+                We are a student group acting independently of the University of
+                California. We take full responsibility for our organization and
+                this web site.
+              </p>
+            </div>
+            <div class="col-auto mx-auto">
+              <div class="icons">
+                <a
+                  class="icon icon--instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-warning"
+                  href="https://www.instagram.com/berkeleypbl/"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  class="icon icon--facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-warning"
+                  href="https://www.facebook.com/berkeleypbl"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a
+                  class="icon icon--youtube"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-warning"
+                  href="https://www.youtube.com/user/BerkeleyPBL"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+                <a
+                  class="icon icon--gmail"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-warning"
+                  href="mailto:execs@pbl.berkeley.edu"
+                  ><i class="far fa-envelope"></i
+                ></a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="container-sm my-4 footer-text2 text-light">
-      <div>
-        Website created and designed by
-        <a target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/carrieeliuu/">Carrie Liu</a>,
-        <a target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/jeremymui/">Jeremy Mui</a>, and
-        <a target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/priscilla-chang/">Priscilla Chang</a>
+      <div class="container-sm my-4 footer-text2 text-light">
+        <div>
+          Website created and designed by
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-warning"
+            href="https://www.linkedin.com/in/carrieeliuu/"
+            >Carrie Liu</a
+          >,
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-warning"
+            href="https://www.linkedin.com/in/jeremymui/"
+            >Jeremy Mui</a
+          >, and
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-warning"
+            href="https://www.linkedin.com/in/priscilla-chang/"
+            >Priscilla Chang</a
+          >
+        </div>
+        <div>© PBL 2022</div>
       </div>
-      <div>
-        © PBL 2022
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  <script src="assets/js/scripts.js"></script>
-</body>
-
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/scripts.js"></script>
+  </body>
 </html>
