@@ -357,7 +357,9 @@ svg {
 }
 
 .ourapproach-background {
-  background-image: url("../img/city.jpg");
+  background-image:
+  linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
+  url("../img/Sam_Kat_CT.jpg");
 }
 
 @media (min-width: 768px) {
