@@ -464,6 +464,11 @@ svg {
   width: 100%;
 }
 
+.logo-img-special {
+  padding-left: 10%;
+  width: 70%;
+}
+
 .alumni-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
