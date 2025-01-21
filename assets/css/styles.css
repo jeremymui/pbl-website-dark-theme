@@ -1,6 +1,11 @@
 :root {
-  --yellow: #ffc107;
-  --muted-white: #aaaaaa;
+  --yellow: #2d2d50;
+  --light-blue: #c9d1ff;
+  --highlight: #279AF1;
+  --beige: #edede9;
+  --muted-white: #bcbcbf;
+  --darker-beige: #d7d9db;
+  --footer-color: #1d1d33;
   --dark: #242627;
   --nav-height: 50px;
 }
@@ -11,9 +16,19 @@
   }
 }
 
+.display-4 {
+  color: var(--yellow);
+  font-weight: 500;
+}
+
+html {
+  height: 100%; /* getting rid of gap under footer */
+}
+
 body {
-  background-color: black;
-  color: white;
+  background-color: var(--beige);
+  margin-bottom: 0px;
+  color: black;
   font-family: "Segoe UI",Roboto,"Open Sans",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
 
@@ -32,16 +47,42 @@ body {
 }
 
 .black-navbar {
-  background: black !important;
+  background: var(--yellow) !important;
+  opacity: 90%;
 }
 
 nav {
   transition: all 0.3s ease;
-  background: black;
+  /* background: red; */
 }
 
 .navbar-dark .navbar-nav .nav-item.active .nav-link {
-  color: #fff;
+  color: white;
+  /* font-weight: bold; */
+}
+
+#spy .officer-nav a.nav-link.active, #spy a.nav-link.active:hover {
+  color: var(--yellow);
+}
+
+.officer-nav .navbar-dark .navbar-nav .nav-item.active .nav-link {
+  color: var(--yellow);
+  /* font-weight: bold; */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--beige);
+}
+
+
+/* committees sidebar nav links */
+.committees-background .navbar-dark .navbar-nav .nav-item.active .nav-link {
+  color: white;
+  
+}
+
+.committees-background .navbar-dark .navbar-nav .nav-link :active {
+  color: white;
 }
 
 @media (min-width: 768px) {
@@ -78,8 +119,7 @@ button {
 
 .footer p {
   margin-bottom: 0;
-  color: #999;
-  background: #111;
+  color: var(--muted-white);
 }
 
 .footer-icon-link {
@@ -88,11 +128,14 @@ button {
 
 .footer-text {
   font-size: 0.90rem;
-  color: #AAAAAA
+  color: var(--muted-white);
+  background-color: var(--footer-color);
+  margin-bottom: 5%;
 }
 
 .footer-text2 {
   font-size: 0.85rem;
+  color: var(--muted-white);
 }
 
 .pbl-logo {
@@ -103,17 +146,18 @@ button {
 
 .dropdown-menu {
   border: white 2px solid;
-  border-top: 0;
-  background-color: black;
+  /* border-top: 0; */
+  background-color: var(--yellow);
 }
 
 .dropdown-item {
   color: white;
+  background-color: var(--yellow) !important;
 }
 
 .dropdown-item:focus, .dropdown-item:hover {
-  background-color: var(--yellow);
-  color: black;
+  background-color: white !important;
+  color: var(--yellow) !important;
 }
 
 .nav-item {
@@ -141,7 +185,7 @@ button {
     height: calc(var(--nav-height) - 100%);
     left: 50%;
     bottom: calc(100% + 1px); /* + 1px to fix rounding issues */
-    border-right: var(--yellow) 1px solid;
+    border-right: white 1px solid; /* this is for website nav bar line */
     position: absolute;
     transform: translateY(-100%);
     transition: 0.2s ease;
@@ -197,7 +241,7 @@ main {
 .join-background {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-    url("../img/header/joinusheader.jpg");
+    url("../img/header/joinusheader2.jpg");
   background-position: center;
 }
 
@@ -287,7 +331,7 @@ svg {
 
 
 .banner {
-
+  background-color: --yellow;
 }
 
 .video-banner {
@@ -311,11 +355,18 @@ svg {
     margin-right: -15px;
 }
 
+#why-pbl {
+  color: white;
+}
+
 .content__text {
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 20px;
-    background: #000;
+    /* changes */
+    background: var(--yellow);
+    color: white;
+    box-shadow: var(--footer-color) 10px 10px;
 }
 
 @media (min-width: 992px) {
@@ -342,14 +393,18 @@ svg {
   background-position: center center;
   -webkit-background-size: cover;
   background-size: cover;
+  background-color: var(--darker-beige);
 }
 
 .whatwedo-background {
   background-image: url("../img/whatwedo.jpg");
+  background-color: --var(--darker-beige);
+
 }
 
 .whypbl-background {
   background-image: url("../img/whypbl.jpg");
+  background-color: var(--beige);
 }
 
 .orgstructure-background {
@@ -359,7 +414,9 @@ svg {
 .ourapproach-background {
   background-image:
   linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
-  url("../img/Sam_Kat_CT.jpg");
+  url("../img/ourapproach.jpg");
+  height: auto;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -411,9 +468,11 @@ svg {
 
 .brackets {
   position: relative;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  padding: 20px;
+  /* margin-top: 40px;
+  margin-bottom: 40px; */
+  padding: 40px;
+  /* background-color: var(--beige); */
+  
 }
 
 .brackets::before, .brackets::after {
@@ -426,15 +485,15 @@ svg {
 .brackets::before {
   border-left: 3px var(--yellow) solid;
   border-top: 3px var(--yellow) solid;
-  top: 0;
-  left: 0;
+  top: 20px;
+  left: 20px;
 }
 
 .brackets::after {
   border-right: 3px var(--yellow) solid;
   border-bottom: 3px var(--yellow) solid;
-  bottom: 0;
-  right: 0;
+  bottom: 20px;
+  right: 20px;
 }
 
 .pillar-img {
@@ -462,6 +521,9 @@ svg {
 
 .logo-img {
   width: 100%;
+  /* max-width: 75px; */
+  max-height: auto;
+  max-width: 90%;
 }
 
 .logo-img-special {
@@ -480,7 +542,7 @@ svg {
 .client-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 30px;
+  gap: 15px;
   justify-content: space-evenly;
   align-items: stretch;
 }
@@ -511,7 +573,7 @@ svg {
 }
 
 #spy a.nav-link:hover {
-  border-left: var(--yellow) 2px solid;
+  border-left: var(--yellow) 2px solid; 
   padding-left: 8px;
 }
 
@@ -542,12 +604,17 @@ svg {
 }
 
 .bg-dark {
-    background-color: #242627!important;
+    background-color: var(--yellow) !important;
+    color: var(--muted-white);
 }
 
 .bio-rect-img {
   display: block;
   max-height: 100%;
+  border-radius: 8px;
+  height: 500px; /* Set the desired height */
+  object-fit: cover; /* Or 'contain' if you want to fit the image without cropping */
+  width: auto; 
 }
 
 .invert-img {
@@ -561,7 +628,7 @@ svg {
   bottom: 0;
   transform: translateY(100%);
   transition: all 0.3s ease;
-  background-color: var(--dark);
+  background-color: var(--footer-color);
   user-select: none;
   text-align: center;
 }
@@ -575,7 +642,7 @@ svg {
   bottom: 100%;
   left: 0;
   right: 0;
-  background-color: var(--dark);
+  background-color: var(--footer-color);
 }
 
 .bio-hidden {
@@ -583,6 +650,7 @@ svg {
   transition: all 0.3s ease;
   overflow: hidden;
   padding: 0 15px 0 15px;
+  background-color: var(--footer-color);
 }
 
 .bio-hidden p {
@@ -594,18 +662,25 @@ svg {
 }
 
 .role {
-  color: #aaaaaa;
+  color: var(--muted-white);
 }
 
 .timeline-grid {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-auto-flow: row dense;
+  background-color: var(--darker-beige);
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
 }
 
 .timeline-marker {
   grid-row-end: span 2;
   position: relative;
+  color: var(--yellow);
 }
 
 @media (min-width: 576px) {
@@ -656,14 +731,17 @@ svg {
   margin-left: 20px;
   margin-right: 20px;
   line-height: 2.5rem;
+  color: var(--yellow) !important;
+  text-align: right;
 }
 
 .timeline-grid h5 {
-  color: var(--muted-white);
+  color: var(--yellow);
 }
 
 .timeline-grid h1, .timeline-grid h2, .timeline-grid h3, .timeline-grid h4, .timeline-grid h5, .timeline-grid h6 {
   line-height: 1;
+  color: var(--yellow);
 }
 
 .timeline-grid a {
@@ -676,7 +754,7 @@ svg {
   margin-top: auto;
   margin-bottom: auto;
   position: relative;
-  max-height: 85%;
+  max-height: 75%;
   max-width: 100%;
   align-items: center;
 }
@@ -701,12 +779,12 @@ svg {
   display: grid;
   position: relative;
   grid-template-columns: repeat(auto-fit, minmax(13%, 1fr)); /*120px*/
-  gap: 5%; /*30px*/
+  gap: 3%; /*30px*/
   justify-content: space-evenly;
   align-items: center;
-  height: 110px;
-  margin-top: auto;
-  margin-bottom: auto;
+  height: max(110px);
+  margin-top: 3% auto;
+  margin-bottom: 3% auto;
 }
 
 .client-timeline-marker {
@@ -735,7 +813,11 @@ svg {
     margin-top: auto;
     margin-bottom: auto;
   }
+  .client-timeline-date {
+    color: var(--yellow);
+  }
 }
+
 
 /* bubbles */
 .client-timeline-marker::before {
@@ -749,7 +831,7 @@ svg {
   margin: auto;
   position: relative;
   border-radius: 100%;
-  background: #ffc107;
+  background: #113255;
   content: "";
   display: block;
 }
@@ -765,14 +847,14 @@ svg {
   margin: auto;
   position: relative;
   border-radius: 100%;
-  background: #ffc107;
+  background: #113255;
   content: "";
   display: block;
 }
 
 /* vertical line */
 .client-timeline-marker::after {
-  background-color: #ffc107;
+  background-color: #113255;
   content: "";
   width: 3px;
   left: 0;
@@ -786,7 +868,7 @@ svg {
 }
 
 .client-timeline-marker-last::after {
-  background-color: #ffc107;
+  background-color: #113255;
   content: "";
   width: 3px;
   left: 0;
@@ -805,6 +887,7 @@ svg {
   line-height: 2.5rem;
   margin-top: auto;
   margin-bottom: auto;
+  color: var(--yellow);
 }
 
 .icons {
@@ -823,9 +906,9 @@ svg {
   justify-content: center;
   text-decoration: none;
   font-size: 26px;
-  color: #fff;
+  color: var(--muted-white);
   border-radius: 50%;
-  outline: 2px solid #fff;
+  outline: 2px solid var(--muted-white);
   transition-property:
   outline-offset, outline-color,
   background-color;
@@ -834,7 +917,7 @@ svg {
 
 .icon:hover {
   outline-offset: 4px;
-  color: #fff;
+  color: white;
   text-decoration: none;
 }
 
@@ -865,20 +948,22 @@ svg {
 /* Style the tab */
 .tab {
   overflow: hidden;
-  background-color: #000000;
+  background-color: var(--yellow);
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /* Style the buttons inside the tab */
 .tab button {
-  background-color: #000000;
+  background-color: var(--yellow);
   float: right;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 7px 10px;
   transition: 0.3s;
-  color: #ffffff;
-  border-right: 1px solid #ffffff;
+  color: var(--light-blue); /* KH */
+  border-right: 1px solid var(--light-blue);
   line-height: 1px;
 }
 
@@ -898,7 +983,7 @@ svg {
 
 /* Create an active/current tablink class */
 .tab button.active {
-  color: #ffc107;
+  color: white;
 }
 
 /* Style the tab content */
@@ -907,7 +992,7 @@ svg {
   padding: 6px 12px;
   border: 1px solid #000000;
   border-top: none;
-  color: #ffffff;
+  color: #000000;
 }
 
 .tabcontent {
@@ -921,19 +1006,19 @@ svg {
 }
 
 #box {
-  background-color: #ffc107;
+  background-color: var(--light-blue);
   padding: 5px;
-  color: #000000;
+  color: var(--yellow);
   font-weight: bold;
   font-size: large;
 }
 
 hr.new1 {
-  border: 1px solid #ffc107;
+  border: 1px solid #113255;
 }
 
 .header2 {
-  color: #ffc107;
+  color: var(--yellow);
   font-size: 1.6rem;
   font-weight: lighter;
 }
@@ -992,6 +1077,7 @@ tr:last-child {
 .sponsors-img {
   width: 100%;
   max-width: 150px;
+  max-height: 150px;
   margin: auto;    
   display: block;
   justify-content: center;
@@ -1000,6 +1086,206 @@ tr:last-child {
 h1 span{font-weight:normal}
 
 .abt {
-  padding-top: calc(var(--nav-height) + 15px);
-  margin-bottom: calc(var(--nav-height) / 2);
+  /* padding-top: calc(var(--nav-height) / 2);
+  padding-bottom: calc(var(--nav-height) / 2);
+  padding-left: calc(var(--nav-height) / 2);
+  padding-right: calc(var(--nav-height) / 2); */
+}
+
+
+.btn-outline-warning {
+  color: white !important; /* New text color */
+  border-color: white !important; /* New border color */
+  border-radius: 5px;
+  box-shadow: transparent !important;
+}
+
+.btn-outline-warning:hover {
+  color: white !important; /* Text color on hover */
+  background-color: white; /* New background color on hover */
+  border-color: white
+}
+
+.btn-outline-warning:focus {
+  box-shadow: transparent;
+}
+
+.btn:focus {
+  outline: none; /* Removes default yellow outline */
+  box-shadow: 0 0 5px var(--muted-white);
+}
+
+#why-pbl {
+  padding-top: 300px;
+}
+
+.blue-backg-header {
+  color: white;
+}
+
+.white-backg-btn {
+  color: white;
+  background-color: var(--yellow);
+  outline: white solid 1px;
+}
+
+.white-backg-btn:hover {
+  color: var(--yellow);
+  background-color: white;
+  outline: var(--yellow) solid 1px;
+}
+
+.text-warning {
+  color: rgb(201, 209, 255) !important;
+}
+
+.text-warning:hover {
+  color: var(--highlight);
+}
+
+#values {
+  background-color: var(--yellow);
+  padding: calc(var(--nav-height) / 2);
+  color: white;
+}
+
+/* #values.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+} */
+
+/* #values .value {
+  width: calc(25% - 10%);
+  background-color: red;
+  margin: 2px;
+} */
+
+#values .brackets {
+  color: white;
+}
+
+#values .brackets::before, .brackets::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+
+#values .brackets::before {
+  border-left: 3px white solid;
+  border-top: 3px white solid;
+  top: 20px;
+  left: 20px;
+}
+
+#values .brackets::after {
+  border-right: 3px white solid;
+  border-bottom: 3px white solid;
+  bottom: 20px;
+  right: 20px;
+}
+
+
+
+#community {
+  text-align: center;
+}
+
+
+
+#sponsors {
+  background-color: var(--darker-beige);
+  padding: 25px;
+  /* width: 100%; */
+}
+
+#sponsors.container.abt {
+  /* background-color: var(--darker-beige); */
+  /* width: 100%; */
+}
+
+.partner-bubbles {
+  margin: 25px;
+}
+
+.partner {
+  background-color: var(--beige);
+  border-radius: 15px;
+
+  margin: 15px;
+}
+
+
+
+#alumni.container {
+  background-color: var(--beige);
+}
+
+
+
+.partner .col-sm-12,
+.partner .col-md-3,
+.partner .col-md-5,
+.partner .col-xl-3,
+.partner .col-xl-8 {
+  margin: 0; /* Reset margins */
+  padding: 15px; /* Add consistent padding */
+}
+
+.contact {
+  padding-top: 15px;
+}
+
+.contact a {
+  color: var(--yellow);
+}
+
+.contact a:hover {
+  color: var(--highlight);
+}
+
+.contact .text-warning {
+  color: var(--yellow) !important;
+}
+
+.contact .text-warning:hover {
+  color: var(--highlight) !important;
+}
+
+.contact img {
+  width: 100%;
+  height: auto;
+}
+
+#spy .officer-nav a.nav-link.active:hover {
+  color: var(--yellow);
+}
+
+.officer-airtable {
+  color: var(--yellow);
+}
+
+.officer-airtable:hover {
+  color: var(--highlight);
+}
+
+.btn-outline-warning:hover {
+  background-color: var(--yellow) !important;
+
+}
+
+.btn-outline-warning:not(:disabled):not(.disabled):active {
+  background-color: var(--yellow) !important;
+  color: white !important;
+  border-color: white !important;
+  box-shadow: transparent;
+}
+
+.btn-outline-warning:not(:disabled):not(.disabled):focus {
+  background-color: var(--yellow) !important;
+  color: white !important;
+  border-color: white !important;
+  box-shadow: transparent;
 }
