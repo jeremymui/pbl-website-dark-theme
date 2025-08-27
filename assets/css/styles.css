@@ -58,7 +58,7 @@ nav {
 
 .navbar-dark .navbar-nav .nav-item.active .nav-link {
   color: white;
-  /* font-weight: bold; */
+  font-weight: 500;
 }
 
 #spy .officer-nav a.nav-link.active, #spy a.nav-link.active:hover {
@@ -72,8 +72,13 @@ nav {
 
 .navbar-dark .navbar-nav .nav-link {
   color: var(--beige);
+  padding: 0.5rem 1rem;
+  display: inline-block;
 }
 
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: white;
+}
 
 /* committees sidebar nav links */
 .committees-background .navbar-dark .navbar-nav .nav-item.active .nav-link {
@@ -142,6 +147,7 @@ button {
   padding-top: 10px;
   height: var(--nav-height);
   width: auto;
+  margin-left: 0.5rem;
 }
 
 .dropdown-menu {
@@ -1288,4 +1294,85 @@ h1 span{font-weight:normal}
   color: white !important;
   border-color: white !important;
   box-shadow: transparent;
+}
+
+/* Login Page Styles */
+.login-card {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-color: #666;
+}
+
+.login-card .card-body {
+  padding: 2rem;
+}
+
+.login-card .card-title {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.login-card .card-text {
+  color: #999;
+}
+
+/* Modal Styles */
+.modal-content {
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+.modal-header {
+  border-bottom: 1px solid #333;
+}
+
+.modal-footer {
+  border-top: 1px solid #333;
+}
+
+.modal .close {
+  color: #fff;
+}
+
+.modal .form-control {
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+.modal .form-control:focus {
+  background-color: #2a2a2a;
+  border-color: #666;
+  color: #fff;
+  box-shadow: none;
+}
+
+.modal .btn-secondary {
+  background-color: #333;
+  border-color: #444;
+}
+
+.modal .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.modal .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Prevent Join Us from wrapping */
+.nowrap-link {
+  white-space: nowrap;
 }
