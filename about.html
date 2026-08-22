@@ -27,7 +27,37 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
-</head>
+    <script>
+      /* Image load safety net. The web host refuses image requests when too many
+         are in flight; without this the visitor is left looking at a broken-image
+         icon. Retry those quietly, spaced out and capped, so they resolve. */
+      (function () {
+        var MAX = 5, q = [], active = 0, LIMIT = 2;
+        function pump() {
+          while (active < LIMIT && q.length) { active++; q.shift()(); }
+        }
+        function retry(img) {
+          var n = +(img.getAttribute("data-rt") || 0);
+          if (n >= MAX) return;
+          img.setAttribute("data-rt", n + 1);
+          setTimeout(function () {
+            q.push(function () {
+              var src = img.getAttribute("src"), done = function () { active--; pump(); };
+              img.addEventListener("load", done, { once: true });
+              img.addEventListener("error", done, { once: true });
+              img.removeAttribute("src");
+              img.setAttribute("src", src);
+            });
+            pump();
+          }, Math.min(600 * Math.pow(2, n), 8000) + Math.random() * 900);
+        }
+        document.addEventListener("error", function (e) {
+          var t = e.target;
+          if (t && t.tagName === "IMG" && t.getAttribute("src")) retry(t);
+        }, true);
+      })();
+    </script>
+  </head>
 
 <body>
 
@@ -76,7 +106,6 @@
                 <div class="dropdown-menu text-light">
                   <a class="dropdown-item" href="committees.html#bio-tech">Biotech</a>
                   <a class="dropdown-item" href="committees.html#consulting">Consulting</a>
-                  <!-- <a class="dropdown-item" href="committees.html#finance">Finance</a> -->
                   <a class="dropdown-item" href="committees.html#marketing">Marketing</a>
                   <a class="dropdown-item" href="committees.html#technology">Technology</a>
                 </div>
@@ -191,40 +220,40 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-3 col-md-4 col-sm-6 mx-auto toFadeIn p-2">
-            <img src="assets/img/gallery/gallery1.PNG" class="w-100">
+            <img src="assets/img/gallery/gallery1-photo.jpg" class="w-100" loading="lazy" decoding="async" width="1200" height="825">
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6 mx-auto toFadeIn p-2">
-            <img src="assets/img/gallery/gallery2.jpg" class="w-100">
+            <img src="assets/img/gallery/gallery2.jpg" class="w-100" loading="lazy" decoding="async" width="1200" height="825">
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6 mx-auto toFadeIn p-2">
-            <img src="assets/img/gallery/gallery3.jpg" class="w-100">
+            <img src="assets/img/gallery/gallery3.jpg" class="w-100" loading="lazy" decoding="async" width="1200" height="825">
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6 mx-auto toFadeIn p-2">
-            <img src="assets/img/gallery/gallery4.jpg" class="w-100">
+            <img src="assets/img/gallery/gallery4.jpg" class="w-100" loading="lazy" decoding="async" width="1200" height="825">
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6 mx-auto toFadeIn p-2">
-            <img src="assets/img/gallery/gallery5.jpg" class="w-100">
+            <img src="assets/img/gallery/gallery5.jpg" class="w-100" loading="lazy" decoding="async" width="1200" height="825">
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6 mx-auto toFadeIn p-2">
-            <img src="assets/img/gallery/gallery6.jpg" class="w-100">
+            <img src="assets/img/gallery/gallery6.jpg" class="w-100" loading="lazy" decoding="async" width="1200" height="825">
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6 mx-auto toFadeIn p-2">
-            <img src="assets/img/gallery/gallery7.jpeg" class="w-100">
+            <img src="assets/img/gallery/gallery7.jpeg" class="w-100" loading="lazy" decoding="async" width="1200" height="825">
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6 mx-auto toFadeIn p-2">
-            <img src="assets/img/gallery/gallery8.jpg" class="w-100">
+            <img src="assets/img/gallery/gallery8.jpg" class="w-100" loading="lazy" decoding="async" width="1200" height="825">
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6 mx-auto toFadeIn p-2">
-            <img src="assets/img/gallery/gallery9.jpg" class="w-100">
+            <img src="assets/img/gallery/gallery9.jpg" class="w-100" loading="lazy" decoding="async" width="1200" height="825">
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6 mx-auto toFadeIn p-2">
-            <img src="assets/img/gallery/gallery10.jpeg" class="w-100">
+            <img src="assets/img/gallery/gallery10.jpeg" class="w-100" loading="lazy" decoding="async" width="723" height="497">
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6 mx-auto toFadeIn p-2">
-            <img src="assets/img/gallery/gallery11.jpeg" class="w-100">
+            <img src="assets/img/gallery/gallery11.jpeg" class="w-100" loading="lazy" decoding="async" width="1200" height="825">
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6 mx-auto toFadeIn p-2">
-            <img src="assets/img/gallery/gallery12.jpg" class="w-100">
+            <img src="assets/img/gallery/gallery12.jpg" class="w-100" loading="lazy" decoding="async" width="1200" height="825">
           </div>
         </div>
       </div>
@@ -239,142 +268,142 @@
           <div class="alumni-grid toFadeIn">
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://www.apple.com">
-                <img src="assets/img/logos/apple.png" class="logo-img">
+                <img src="assets/img/logos/apple.png" class="logo-img" loading="lazy" decoding="async" width="500" height="614">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://www2.deloitte.com/us/en.html">
-                <img src="assets/img/logos/deloitte.png" class="logo-img">
+                <img src="assets/img/logos/deloitte.png" class="logo-img" loading="lazy" decoding="async" width="500" height="281">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="http://bofa.com">
-                <img src="assets/img/logos/bofa.png" class="logo-img">
+                <img src="assets/img/logos/bofa.png" class="logo-img" loading="lazy" decoding="async" width="300" height="300">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com">
-                <img src="assets/img/logos/linkedin.png" class="logo-img">
+                <img src="assets/img/logos/linkedin.png" class="logo-img" loading="lazy" decoding="async" width="500" height="500">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://www.goldmansachs.com/">
-                <img src="assets/img/logos/goldman-sachs.svg" class="logo-img">
+                <img src="assets/img/logos/goldman-sachs.svg" class="logo-img" loading="lazy" decoding="async" width="64" height="64">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://www.bain.com/">
-                <img src="assets/img/logos/bain.png" class="logo-img">
+                <img src="assets/img/logos/bain.png" class="logo-img" loading="lazy" decoding="async" width="500" height="500">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://www.dropbox.com">
-                <img src="assets/img/logos/dropbox.png" class="logo-img">
+                <img src="assets/img/logos/dropbox.png" class="logo-img" loading="lazy" decoding="async" width="500" height="500">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://www.google.com">
-                <img src="assets/img/logos/google.svg" class="logo-img">
+                <img src="assets/img/logos/google.svg" class="logo-img" loading="lazy" decoding="async" width="534" height="544">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://www.ey.com/en_gl">
-                <img src="assets/img/logos/ey.svg" class="logo-img">
+                <img src="assets/img/logos/ey.svg" class="logo-img" loading="lazy" decoding="async" width="1080" height="800">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://www.mckinsey.com/">
-                <img src="assets/img/logos/mckinsey.webp" class="logo-img">
+                <img src="assets/img/logos/mckinsey.webp" class="logo-img" loading="lazy" decoding="async" width="500" height="500">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://www.warnerbros.com/">
-                <img src="assets/img/logos/warner-bros.svg" class="logo-img">
+                <img src="assets/img/logos/warner-bros.svg" class="logo-img" loading="lazy" decoding="async" width="355" height="370">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://wellsfargo.com">
-                <img src="assets/img/logos/wells-fargo.png" class="logo-img">
+                <img src="assets/img/logos/wells-fargo.png" class="logo-img" loading="lazy" decoding="async" width="500" height="539">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://www.banking.barclaysus.com/index.html">
-                <img src="assets/img/logos/barclays.svg" class="logo-img">
+                <img src="assets/img/logos/barclays.svg" class="logo-img" loading="lazy" decoding="async" width="6479" height="1261">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://www.jpmorganchase.com/">
-                <img src="assets/img/logos/jp-morgan.png" class="logo-img">
+                <img src="assets/img/logos/jp-morgan.png" class="logo-img" loading="lazy" decoding="async" width="494" height="494">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://online.citi.com/US/">
-                <img src="assets/img/logos/citi.svg" class="logo-img">
+                <img src="assets/img/logos/citi.svg" class="logo-img" loading="lazy" decoding="async" width="300" height="195">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://amazon.com/">
-                <img src="assets/img/logos/amazon.png" class="logo-img">
+                <img src="assets/img/logos/amazon.png" class="logo-img" loading="lazy" decoding="async" width="500" height="210">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://www.nvidia.com/en-us/">
-                <img src="assets/img/logos/nvidia.svg" class="logo-img">
+                <img src="assets/img/logos/nvidia.svg" class="logo-img" loading="lazy" decoding="async" width="1281" height="1222">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://home.kpmg/xx/en/home.html">
-                <img src="assets/img/logos/kpmg.svg" class="logo-img">
+                <img src="assets/img/logos/kpmg.svg" class="logo-img" loading="lazy" decoding="async" width="688" height="276">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://adobe.com" class="bg-white">
-                <img src="assets/img/logos/adobe.svg" class="logo-img">
+                <img src="assets/img/logos/adobe.svg" class="logo-img" loading="lazy" decoding="async" width="133" height="118">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://www.nasa.gov/">
-                <img src="assets/img/logos/nasa.png" class="logo-img">
+                <img src="assets/img/logos/nasa.png" class="logo-img" loading="lazy" decoding="async" width="500" height="418">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://www.chevron.com/">
-                <img src="assets/img/logos/chevron.png" class="logo-img">
+                <img src="assets/img/logos/chevron.png" class="logo-img" loading="lazy" decoding="async" width="500" height="516">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://www.accenture.com/us-en">
-                <img src="assets/img/logos/accenture.png" class="logo-img">
+                <img src="assets/img/logos/accenture.png" class="logo-img" loading="lazy" decoding="async" width="500" height="281">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://pinterest.com">
-                <img src="assets/img/logos/pinterest.png" class="logo-img">
+                <img src="assets/img/logos/pinterest.png" class="logo-img" loading="lazy" decoding="async" width="500" height="500">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://www.bcg.com/">
-                <img src="assets/img/logos/bcg.png" class="logo-img">
+                <img src="assets/img/logos/bcg.png" class="logo-img" loading="lazy" decoding="async" width="500" height="336">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://cisco.com/">
-                <img src="assets/img/logos/cisco.png" class="logo-img">
+                <img src="assets/img/logos/cisco.png" class="logo-img" loading="lazy" decoding="async" width="500" height="286">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://oracle.com/">
-                <img src="assets/img/logos/oracle.png" class="logo-img">
+                <img src="assets/img/logos/oracle.png" class="logo-img" loading="lazy" decoding="async" width="500" height="500">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://pwc.com/">
-                <img src="assets/img/logos/pwc.svg" class="logo-img">
+                <img src="assets/img/logos/pwc.svg" class="logo-img" loading="lazy" decoding="async" width="1000" height="759">
               </a>
             </div>
             <div class="logo scale-on-hover">
               <a target="_blank" rel="noopener noreferrer" href="https://us.pg.com/">
-                <img src="assets/img/logos/p&g.svg" class="logo-img">
+                <img src="assets/img/logos/p&g.svg" class="logo-img" loading="lazy" decoding="async" width="720" height="720">
               </a>
             </div>
           </div>
@@ -468,15 +497,15 @@
           targeted disciplines within the greater UC Berkeley community.</p>
           
           <h5 class="display-6 text-center">Interested in Sponsoring us?</h5>
-          Please contact Avik, our Vice President of Development at <a class="text-warning"
-            href="mailto:shrutic@berkeley.edu">avikgautam8@berkeley.edu</a>
+          Please contact Irene, our Vice President of Development at <a class="text-warning"
+            href="mailto:ireneli@berkeley.edu">ireneli@berkeley.edu</a>
         </div>
       </div>
 
       <div class="row form-group  toFadeIn">
         <div class="col-md-3 mx-auto">
           <figure class="bio-card">
-            <img class="w-100 bio-rect-img" src="assets/img/portraits/avik-sp25.jpeg" alt="Avik Gautam portrait">
+            <img class="w-100 bio-rect-img" src="assets/img/portraits/irene-contact.jpg" alt="Irene Li portrait" loading="lazy" decoding="async" width="900" height="1200">
           </figure>
         </div>
       </div>
@@ -520,13 +549,13 @@
           <a target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/priscilla-chang/">Priscilla Chang</a>
         </div>
         <div>
-          Redesigned 2025 by 
-          <a target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/hua-kathleen/">Kathleen Hua</a>
-          and
-          <a target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/karora27/">Krish Arora</a>
+          Redesigned 2026 by 
+          <a target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/hua-kathleen/">Kathleen Hua</a>,
+          <a target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/karora27/">Krish Arora</a>, and
+          <a target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/ayush-gupta-berkeley/">Ayush Gupta</a>
         </div> 
         <div>
-          © PBL 2025
+          © PBL 2026
         </div>
     </div>
   </footer>

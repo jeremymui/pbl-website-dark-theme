@@ -9,7 +9,37 @@
   <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">
   <link href="assets/css/styles.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
-</head>
+    <script>
+      /* Image load safety net. The web host refuses image requests when too many
+         are in flight; without this the visitor is left looking at a broken-image
+         icon. Retry those quietly, spaced out and capped, so they resolve. */
+      (function () {
+        var MAX = 5, q = [], active = 0, LIMIT = 2;
+        function pump() {
+          while (active < LIMIT && q.length) { active++; q.shift()(); }
+        }
+        function retry(img) {
+          var n = +(img.getAttribute("data-rt") || 0);
+          if (n >= MAX) return;
+          img.setAttribute("data-rt", n + 1);
+          setTimeout(function () {
+            q.push(function () {
+              var src = img.getAttribute("src"), done = function () { active--; pump(); };
+              img.addEventListener("load", done, { once: true });
+              img.addEventListener("error", done, { once: true });
+              img.removeAttribute("src");
+              img.setAttribute("src", src);
+            });
+            pump();
+          }, Math.min(600 * Math.pow(2, n), 8000) + Math.random() * 900);
+        }
+        document.addEventListener("error", function (e) {
+          var t = e.target;
+          if (t && t.tagName === "IMG" && t.getAttribute("src")) retry(t);
+        }, true);
+      })();
+    </script>
+  </head>
 <body>
   <header class="header careers-background">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top pt-0 pb-2 nav-transition" id="mainNav">
@@ -98,13 +128,13 @@
             <a target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/priscilla-chang/">Priscilla Chang</a>
           </div>
           <div>
-            Redesigned 2025 by 
-            <a target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/hua-kathleen/">Kathleen Hua</a>
-            and
-            <a target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/karora27/">Krish Arora</a>
+            Redesigned 2026 by 
+            <a target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/hua-kathleen/">Kathleen Hua</a>,
+            <a target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/karora27/">Krish Arora</a>, and
+            <a target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/ayush-gupta-berkeley/">Ayush Gupta</a>
           </div> 
           <div>
-            © PBL 2025
+            © PBL 2026
           </div>
     </div>
   </footer>

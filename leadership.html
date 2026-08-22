@@ -30,7 +30,37 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet" />
-</head>
+    <script>
+      /* Image load safety net. The web host refuses image requests when too many
+         are in flight; without this the visitor is left looking at a broken-image
+         icon. Retry those quietly, spaced out and capped, so they resolve. */
+      (function () {
+        var MAX = 5, q = [], active = 0, LIMIT = 2;
+        function pump() {
+          while (active < LIMIT && q.length) { active++; q.shift()(); }
+        }
+        function retry(img) {
+          var n = +(img.getAttribute("data-rt") || 0);
+          if (n >= MAX) return;
+          img.setAttribute("data-rt", n + 1);
+          setTimeout(function () {
+            q.push(function () {
+              var src = img.getAttribute("src"), done = function () { active--; pump(); };
+              img.addEventListener("load", done, { once: true });
+              img.addEventListener("error", done, { once: true });
+              img.removeAttribute("src");
+              img.setAttribute("src", src);
+            });
+            pump();
+          }, Math.min(600 * Math.pow(2, n), 8000) + Math.random() * 900);
+        }
+        document.addEventListener("error", function (e) {
+          var t = e.target;
+          if (t && t.tagName === "IMG" && t.getAttribute("src")) retry(t);
+        }, true);
+      })();
+    </script>
+  </head>
 
 <body data-spy="scroll" data-target="#spy" data-offset="400">
   <header class="header leadership-background">
@@ -80,8 +110,6 @@
                 <div class="dropdown-menu text-light">
                   <a class="dropdown-item" href="committees.html#bio-tech">Biotech</a>
                   <a class="dropdown-item" href="committees.html#consulting">Consulting</a>
-                  <!-- <a class="dropdown-item" href="committees.html#finance" -->
-                  <!-- >Finance</a -->
                   <!-- > -->
                   <a class="dropdown-item" href="committees.html#marketing">Marketing</a>
                   <a class="dropdown-item" href="committees.html#technology">Technology</a>
@@ -165,224 +193,262 @@
             </div>
             <div class="row">
               <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/krish-sp25.jpg"
-                    alt="Krish Arora portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Krish Arora</h5>
-                        <span class="h6 role">Co-President</span>
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/angelo-fa26.jpg"
+                      alt="Angelo Bounthapanya portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Angelo Bounthapanya</h5>
+                          <span class="h6 role">Co-President</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hi! My name is Angelo Bounthapanya, and I'm a senior from the Bay Area
+                            studying Economics. My professional interests include aspects of both
+                            finance and consulting. I previously interned at Praxis Ventures as a
+                            summer capital intern, and more recently at EY-Parthenon this past summer.
+                            My hobbies include going to the gym, watching sports, and spending time
+                            with my friends. Feel free to reach out and schedule a time to talk.
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/angelojamesbounthapanya/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hi! My name is Krish Arora and I'm currently a Junior studying Data Science and Applied
-                          Mathematics & Modeling. My professional interests are oriented towards Software Engineering
-                          and AI/ML, with my research experience primarily focused on deep neural network optimization
-                          and topic modeling. This past summer I was an SDE Intern at Amazon and I am currently working
-                          at IBM as a Spring SDE Intern. Outside of work, I love to spend my free time exploring modern
-                          art museums, being overly caffeinated, going on random sf side questions, and going to the
-                          gym. Feel free to reach out if you have any questions or just want to chat I'm always down to
-                          yap :D
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/karora27
-                          "><i class=" fab fa-linkedin"></i></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/avik-fa26.jpg"
+                      alt="Avik Gautam portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Avik Gautam</h5>
+                          <span class="h6 role">Co-President</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hi! My name is Avik, and I'm a Senior studying Computer Science. I am
+                            interested in software engineering, as well as brand strategy and creative
+                            advertising. I have been a 2-time SDE intern at Amazon working on the
+                            back-end of their Photos on-device experience. I also love teaching and
+                            have taught both within PBL as chair and VP Dev as well as through course
+                            staff for 61b. Outside of work, I love watching basketball and soccer, and
+                            playing or listening to music. Excited to meet you all!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/avik-gautam/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/stephfa25 1.png" alt="Stephanie Schaupp
-                    portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Stephanie Schaupp
-                        </h5>
-                        <span class="h6 role">Co-President</span>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/ayush-fa26.jpg"
+                      alt="Ayush Gupta portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Ayush Gupta</h5>
+                          <span class="h6 role">Vice President of Operations</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hi! My name is Ayush and I’m a senior from the Bay Area studying Data
+                            Science. My professional interests lie in Software Engineering and I’ve
+                            previously worked at both Amazon and Meta as a SWE intern. I also love
+                            teaching and for the past few semesters I’ve been on course staff for CS
+                            61B as a tutor. Some of my hobbies include photography (@gups.jpeg tap
+                            in!), playing pickleball, and trying new food. I’m really excited to meet
+                            all of you!!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/ayush-gupta-berkeley/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hi! I'm Stephanie, a Junior studying Energy Engineering. I'm interested in renewable energy,
-                          transportation startups, and engineering consulting. I've worked for the Department of Energy,
-                          and as a TPM for Zoox. I love meeting new people and making friends, so please feel free to
-                          reach out to coffee chat or with any questions!
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning"
-                          href="https://www.linkedin.com/in/stephanieschaupp/"><i class="fab fa-linkedin"></i></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/irene-fa26.jpg"
+                      alt="Irene Li portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Irene Li</h5>
+                          <span class="h6 role">Vice President of Development</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hi! My name is Irene and I’m currently a junior studying Statistics. I'm
+                            interested in the application of data analysis within different fields,
+                            such as economics. In the past couple semesters, I've worked on PBL's
+                            Lenovo, Life360, and Virtue Worldwide client teams to deliver strategy and
+                            marketing insights. Outside of PBL, I enjoy listening to music, hanging
+                            out with friends, and trying new drink places. Feel free to reach out if
+                            you'd like to chat!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/irenelii/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/angelo-sp26.png"
-                    alt="Angelo Bountapanya portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Angelo Bountapanya</h5>
-                        <span class="h6 role">Senior Vice President</span>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/anabella-fa26.jpg"
+                      alt="Anabella Eskesen portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Anabella Eskesen</h5>
+                          <span class="h6 role">Vice President of Finance</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hey! My name is Bella and I'm currently a junior doubling in Applied Math
+                            and Astrophysics. Career-wise, I'm interested in pursuing a higher
+                            education and doing research. I tend to lean towards quantitative and
+                            tech-heavy roles. My hobbies include skiing, painting, horse riding, and
+                            just eating out with friends. Definitely reach out if you have any
+                            questions!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/anabella-eskesen/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hi! My name is Angelo Bounthapanya, and I'm a junior from the Bay Area studying Economics. My
-                          professional interests include aspects of both finance and consulting. I previously interned
-                          at Praxis Ventures as a summer capital intern, and will be working at EY-Parthenon this
-                          summer. My hobbies include going to the gym, watching sports, and spending time with my
-                          friends. Feel free to reach out and schedule a time to talk.
-
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning"
-                          href="https://www.linkedin.com/in/angelo-james-bounthapanya-5aa484250"><i
-                            class=" fab fa-linkedin"></i></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/isabella-fa26.jpg"
+                      alt="Isabella Lee portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Isabella Lee</h5>
+                          <span class="h6 role">Vice President of Projects</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hii everyone! My name is Isabella and I’m currently a Junior studying
+                            Cognitive Science and Data Science. My passion lies in product and
+                            marketing strategy, and exploring how human-centered thinking influences
+                            business decisions in the entertainment and tech space. I was previously
+                            at CNN under Warner Bros Discovery as a UX Research Intern and worked in
+                            Singapore as a web dev. + marketing intern. My hobbies include dancing to
+                            hip hop and kpop (check out KPGcal), eating, volleyball, and hanging out
+                            with friends. Let’s connect!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/isabellaylee/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/amanda-sp26.png"
-                    alt="Amanda Antonious portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Amanda Antonious</h5>
-                        <span class="h6 role">Vice President of Operations</span>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/eric-fa26.jpg"
+                      alt="Eric Nguyen portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Eric Nguyen</h5>
+                          <span class="h6 role">Internal Vice President</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hellooooo! My name is Eric and I'm a Senior studying Economics and
+                            Sociology. My career goals are oriented towards an intersection between
+                            Gaming and Entrepreneurship. In PBL this semester, however, my sole goal
+                            will be to make sure everyone has a great time! My hobbies including
+                            pickleball, fishing, hiking, and hanging out with my friends. Please reach
+                            out with any questions you may have!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/ericquoc/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hey! My name is Amanda and I’m a Junior studying
-                          Cognitive Science, Data Science, & Design.
-                          My career aspirations consist of working in technical product management.
-                          I'll be interning at Visa this summer as a TPM and i’ve previously interned at Glint Lab
-                          & Berkshire Hathaway for marketing/web dev. In my free time, I love spending time with
-                          friends, listening
-                          to music, cafe/restaurant hopping, staying active, & shopping!
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="www.linkedin.com/in/amanda-antonious
-
-                          "><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/avik-sp25.jpeg" alt="Avik Gautam
-                    portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Avik Gautam
-                        </h5>
-                        <span class="h6 role">Vice President of Development</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hi! My name is Avik and I'm a Junior studying Computer Science
-                          and Business Administration. I am interested in software
-                          engineering, as well as brand strategy, product marketing,
-                          and product management. Previously, I've worked on projects
-                          with Twitch, Bosch, AT&T, Gold Bond, and Tide and have been a SDE intern
-                          at Amazon. I enjoy playing volleyball, watching basketball and
-                          soccer, and playing or listening to music. Feel free to reach
-                          out and ask any questions!
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="www.linkedin.com/in/avik-gautam
-                          "><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/armaan-sp25.jpeg" alt="Armaan Srireddy
-                    portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Armaan Srireddy
-                        </h5>
-                        <span class="h6 role">Vice President of Finance</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hey! My name is Armaan and I'm a junior studying energy
-                          engineering with a certificate in design innovation.
-                          engineering, and sustainability. In the past, l've been an
-                          CAD and Systems intern at Enerflex and an engineering intern
-                          at ORE. In my free time, I enjoy working out, reading, playing
-                          poker, and hanging out with friends. Feel free to reach out if
-                          you have any questions!
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/armaansrireddy/
-                          "><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/ashleyc-sp26.png"
-                    alt="Stephanie Schaupp portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Ashley Chen</h5>
-                        <span class="h6 role">Vice President of Projects</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hi! My name is Ashley and I'm currently a junior studying Molecular and Cellular Biology. I'm
-                          super passionate about healthcare consulting, biotechnology, pharmaceutical sales, and just
-                          generally business development in healthcare! My previous experiences include psychophysics
-                          research at Caltech and pharma sales strategy at Novartis and AbbVie. In my free time, I love
-                          going to concerts, shopping, hanging out with my friends, and drinking coffee. Feel free to
-                          reach out if you have any questions!
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="www.linkedin.com/in/ashleychen183
-                          "><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/angel-sp26.png"
-                    alt="richard Yong portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Angel Gallegos
-                        </h5>
-                        <span class="h6 role">Internal Vice President</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hi! My name is Angel and I'm a Junior studying Electrical
-                          Engineering and Computer Science and Bioengineering.
-                          I really love research and am interested in pursuing a
-                          future in R&D within biotech/medtech, with a focus on
-                          medical devices. In line with these goals, I'm currently a
-                          member of the Iain Clark lab. In my free time I enjoy
-                          thrifting, skating, and jiu jitsu!
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning"
-                          href="https://www.linkedin.com/in/richard-yong"><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
+                    </figcaption>
+                  </figure>
+                </div>
             </div>
           </section>
           <section class="committee" id="internal-networking">
@@ -399,114 +465,144 @@
             </div>
             <div class="row">
               <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/minseo-sp26.png" alt="Minseo Park
-                    portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Minseo Park
-                        </h5>
-                        <span class="h6 role">Internal Networking Chair</span>
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/carissa-fa26.jpg"
+                      alt="Carissa Yuan portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Carissa Yuan</h5>
+                          <span class="h6 role">Internal Networking Chair</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hi! My name is Carissa and I’m currently studying Data Science and
+                            Analytics. My career goals are oriented towards generative AI and machine
+                            learning. My hobbies include playing basketball and eating good food!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/carissayuan/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hi, my name is Minseo and I'm a sophomore studying Mechanical Engineering! My career interests
-                          lie in the fields of engineering design and research. Currently, I'm conducting research at
-                          the Biomimetic Millisystems Lab where I design multi-layer soft robots inspired by biological
-                          systems and develop new fabrication methods. I'm also a part of Berkeley Flight lab, where I'm
-                          researching a robotic model of the evolution of insect flight by constructing and analyzing
-                          aerial performance of a gliding robot. In my personal time, I skate competitively with Cal
-                          Figure Skating, work at the SLC, tutor high school students in math, chemistry, and biology,
-                          and play the guitar and piano. Feel free to reach out with any questions!
-
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/minseoopark/
-                          "><i class="fab fa-linkedin"></i></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/minseo-fa26.jpg"
+                      alt="Minseo Park portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Minseo Park</h5>
+                          <span class="h6 role">Internal Networking Chair</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hi, I'm Minseo, and I'm a junior studying Mechanical Engineering. I'm
+                            particularly interested in product design and developing hardware systems
+                            that bridge engineering and user experiences. This past summer, I worked
+                            as a hardware engineer intern at Skydio and have also been involved in
+                            robotics research across several labs where I've explored design,
+                            prototyping, and intelligent systems. Outside of academics, I enjoy figure
+                            skating, playing guitar, golfing, and going to concerts. Feel free to
+                            reach out!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/minseoopark/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/sreefa25 1.png" alt="Sreeram Ranga
-                    portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Sreeram Ranga
-                        </h5>
-                        <span class="h6 role">Internal Networking Chair</span>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/charles-fa26.jpg"
+                      alt="Charles Ding portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Charles Ding</h5>
+                          <span class="h6 role">Internal Networking Chair</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hi! My name is Charles and I'm a senior studying Data Science and
+                            Economics. Professionally I'm interested in data science/engineering and
+                            consulting. In my free time I enjoy working out, playing basketball, and
+                            playing chess.
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/charlesding1/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hi guys! My name is Sreeram Ranga and I’m currently
-                          a junior studying Electrical Engineering and Computer
-                          Science (EECS). My career interests lie in the intersection
-                          of Entrepreneurship and Fintech. I built a couple cool
-                          things in that space that you can ask me about! My hobbies
-                          mainly include bouldering, tennis, eating, and listening
-                          to music. Feel free to reach out with any questions!
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://linkedin.com/in/sreeramranga
-                          "><i class="fab fa-linkedin"></i></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/alex-fa26.jpg"
+                      alt="Alex Lee portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Alex Lee</h5>
+                          <span class="h6 role">Internal Networking Chair</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hey, I’m Alex, a junior at UC Berkeley studying Economics with a minor in
+                            Data Science. My career interests lean toward strategy, data analytics,
+                            and law. Outside of school, you’ll find me on the soccer field or golf
+                            course, following the Premier League, or getting a workout in.
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/alexlee1234/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/andre-sp26.png" alt="Andre Risz
-                    portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Andre Risz
-                        </h5>
-                        <span class="h6 role">Internal Networking Chair</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hey! My name is Andre, and I’m currently a second-year studying Economics and Global Studies.
-                          I’m interested in careers focus on strategy, consulting, and business transformation. Outside
-                          of academics and work, I enjoy football, mountain biking, hiking, running, and kite surfing,
-                          and I’m always happy to connect or answer any questions you have.
-
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/andre-risz/
-                          "><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/kainoa-sp26.png" alt="Kainoa Tomikawa
-                    portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Kainoa Tomikawa
-                        </h5>
-                        <span class="h6 role">Internal Networking Chair</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hello! My name is Kainoa and I'm currently a sophomore studying Applied Math and Data Science.
-                          Currently career goals are pointed towards consulting, strategy, or analytics. I enjoy playing
-                          soccer, spikeball, scenic hikes, and I love watching Dodger baseball.
-
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/kainoatomikawa/
-                          "><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
+                    </figcaption>
+                  </figure>
+                </div>
             </div>
           </section>
 
@@ -524,279 +620,303 @@
             <div class="row">
               <!-- Isabel -->
               <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/isabel-sp26.png"
-                    alt="Isabel Xu portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Isabel Xu</h5>
-                        <span class="h6 role">Project Manager</span>
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/kainoa-fa26.jpg"
+                      alt="Kainoa Tomikawa portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Kainoa Tomikawa</h5>
+                          <span class="h6 role">Project Manager</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hello! My name is Kainoa and I'm a junior studying Applied Math and Data
+                            Science. My career goals are geared towards data analytics and tech
+                            however I am also very interested in strategy and business. Previously, I
+                            was an AI Engineer intern where I worked on an execution platform that
+                            looked to improve software development by utilizing a hybrid team of
+                            humans and agents. I enjoy playing soccer, spikeball, going on scenic
+                            hikes, and I love watching Dodger baseball. Feel free to reach out with
+                            any questions!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/kainoatomikawa/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hello! My name is Isabel and I am a Sophomore studying Economics and Data Science. My career
-                          goals lie in accounting, strategy consulting, and corporate finance. I am particularly
-                          interested in how to transform the finance sector into one that is sustainable and ethical. I
-                          am an incoming intern at EY, and previously worked on projects for Blackrock and Roche. My
-                          personal hobbies include running, watching k-dramas, and trying new food spots with my friends
-                          to rate on Beli. Feel free to connect and I can't wait to meet everyone!
-
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/isabelxuu/
-                          "><i class="fab fa-linkedin"></i></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/ashley-fa26.jpg"
+                      alt="Ashley Park portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Ashley Park</h5>
+                          <span class="h6 role">Project Manager</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hi, my name is Ashley and I'm a Junior studying Media Studies! I'm from
+                            Seoul, South Korea. My professional goals lie in product marketing and
+                            strategy-based consulting in the creative, entertainment, beauty, and
+                            fashion fields. I've previously done beauty marketing internships at
+                            K-beauty companies like Rom&amp;nd and House of Hur. In my free time, I
+                            love to walk, drink caffeine, go to concerts, and hang out with my
+                            friends. Feel free to connect or reach out! 🩷
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/ashleycherinpark/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <!-- Kaitlyn -->
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/kaitlyn-sp26.png"
-                    alt="Kaitlyn Huang portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Kaitlyn Huang</h5>
-                        <span class="h6 role">Project Manager</span>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/porter-fa26.jpg"
+                      alt="Porter Tien portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Porter Tien</h5>
+                          <span class="h6 role">Project Manager</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hello hi wassup! My name is Porter I’m currently a Junior studying Nuclear
+                            and Aerospace Engineering. I’m super interested in energy tech
+                            (specifically fusion) and entrepreneurship. I’ve done research at UC
+                            Berkeley and National Taiwan University and interned at Taller
+                            Technologies and Eunergy Microgrid. I love podcasts, basketball, Eileen
+                            Gu, and planning to take over the world. Feel free to reach out!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/porter-tien/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hello! My name is Kaitlyn, and I am a Sophomore studying Molecular Environmental Biology.
-                          Professionally, I am interesting in pursuing the intersection between healthcare and business.
-                          I am currently doing research for Type 1 Diabetes at Bakar Labs and am an incoming product
-                          development intern at a pharmaceutical company. In my free time, I love traveling and trying
-                          dessert places!
-
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="www.linkedin.com/in/kaitlynmhuang
-                          "><i class="fab fa-linkedin"></i></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/korey-fa26.jpg"
+                      alt="Korey Dang portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Korey Dang</h5>
+                          <span class="h6 role">Project Manager</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hi! My name is Korey, and I’m a junior studying Economics and Public
+                            Health. I’m interested in the intersection of healthcare and business,
+                            particularly within consulting. Previously, I worked as an analyst on
+                            PBL’s Meta team and interned at Visa on the Sponsor Bank Strategy team.
+                            Outside of academics and career activities, you can find me trying to
+                            improve my golf game at the driving range, practicing cello, or watching
+                            horror movies. Please feel free to reach out if you have any questions or
+                            would like to chat!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/korey-dang/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <!-- Tiffany -->
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/tiffanyfa25.png" alt="Tiffany Hoang
-                    portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Tiffany Hoang
-                        </h5>
-                        <span class="h6 role">Project Manager</span>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/ryan-fa26.jpg"
+                      alt="Ryan Teh portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Ryan Teh</h5>
+                          <span class="h6 role">Project Manager</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hey guys! My name is Ryan and I'm currently a junior studying Business and
+                            Public Policy. Professionally, I'm currently interested in corporate
+                            finance, accounting, and strategy consulting. I'm interested in applying
+                            technology and AI to solve business challenges and problems. I'm an
+                            incoming summer core tax intern @ BDO and have been a senior analyst on
+                            the past project for VICE Media. My hobbies include working out, trying
+                            new food spots with friends, and going to SF. Feel free to reach out!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/ryanteh/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hi! My name is Tiffany and I'm currently
-                          a Junior studying Molecular Cell Biology
-                          and Business Administration through the
-                          Robinson LSBE program. With my passions
-                          rooted in this intersection, I am especially
-                          interested in pursuing life science consulting
-                          and making an impact within innovative healthcare.
-                          My experience involves lab research at the IGI
-                          to develop CRISPR cures, and product marketing at
-                          Bio-Rad Laboratories. In my free time, I love doing
-                          nail art, cooking, cafe hopping, making matcha lattes,
-                          and shopping! Feel free to reach out if you have any questions!
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/tiffanymhoang/
-                          "><i class="fab fa-linkedin"></i></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/kamryn-fa26.jpg"
+                      alt="Kamryn Murillo portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Kamryn Murillo</h5>
+                          <span class="h6 role">Project Manager</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hi! I’m Kamryn and I’m currently a junior studying Data Science with a
+                            minor in Science, Technology, and Society. I am super passionate about how
+                            technology and business can create meaningful impact, with interest in
+                            data analytics and product management. I previously interned the San
+                            Francisco Federal Reserve as a Data Analytics Intern and AmigoAI as a
+                            Growth Marketing Intern. In my free time, you can find me exploring new
+                            food spots, creating content, binge-watching shows, or adding to my blind
+                            box collection. Feel free to reach out if you have any questions!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/kamrynmurillo/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <!-- Isabella Lee -->
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/isabella-sp26.png"
-                    alt="Isabella Lee portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Isabella Lee</h5>
-                        <span class="h6 role">Project Manager</span>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/lauren-fa26.jpg"
+                      alt="Lauren Wong portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Lauren Wong</h5>
+                          <span class="h6 role">Project Manager</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hello! My name is Lauren, and I am currently a junior studying Economics.
+                            Professionally, I have interests in accounting, consulting, and brand
+                            marketing strategy. I am an incoming intern for EY, and have previously
+                            worked on projects for BMW. Outside of PBL, I love dancing, taking long
+                            walks, traveling, and exploring new places with friends. Feel free to
+                            reach out!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/laurennataliewong/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hii! My name is Isabella and I’m currently a sophomore studying Cognitive Science and Data
-                          Science, and Design Innovation. My passion lies in creative and brand marketing strategy, and
-                          understanding how human-centered thinking can generate solutions that align with real-world
-                          data. My experiences are in entertainment, hospitality, and tech industries, where I’ve done
-                          GTM strategy and web development projects! Outside of school, I love dancing with KPGcal and
-                          AFXcomp, making matcha at Binge, and playing IM Volleyball! Let’s connect 💗
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="www.linkedin.com/in/isabellaylee
-                          "><i class="fab fa-linkedin"></i></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/muse-fa26.jpg"
+                      alt="Muse Choi portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Muse Choi</h5>
+                          <span class="h6 role">Project Manager</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hi! My name is Muse and I'm a fourth-year studying Microbial Biology. My
+                            career goal is in the field of medicine as I am passionate about combining
+                            patient care with research to improve clinical outcomes and advance
+                            medical knowledge. I am involved in neuroscience research at UCSF, and I
+                            spend my weekends working in the OR. Previously, I was a medical intern in
+                            Panama, Belize, and Kenya. Beyond academics, I enjoy teaching piano and
+                            constructing science experiments at local middle schools. Feel free to
+                            reach out with any questions!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/musechoi/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <!-- Yeonwoo -->
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/yeonwoo-sp26.png"
-                    alt="Yeonwoo Son portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Yeonwoo Son</h5>
-                        <span class="h6 role">Project Manager</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hey! My name is Yeonwoo and I’m currently a junior studying Computer Science. My professional
-                          interest are in Machine Learning, Autonomous Driving, and Robotics. I’ve previously interned
-                          at BMW, Scale AI, and Amazon. My hobbies include watching movies, hanging out with friends,
-                          and golfing. Feel free to reach out!
-
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="www.linkedin.com/in/yeonwooson
-                          "><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <!-- Andrew -->
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/andrew-sp26.png"
-                    alt="Andrew Choy portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Andrew Choy</h5>
-                        <span class="h6 role">Project Manager</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hey, my name is Andrew and I'm a sophomore studying Data Science. I'm interested in software
-                          engineering as well as AI and machine learning. In my free time, I play soccer, basketball,
-                          and make music which I release to Spotify. Feel free to reach out if you want to chat or have
-                          any questions!
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/andrew-choy
-                          "><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <!-- Anthony -->
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/anthonyfa25 1.png" alt="Anthony Serven
-                    portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Anthony Serven
-                        </h5>
-                        <span class="h6 role">Project Manager</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hey! My name is Anthony and I am a junior studying Applied
-                          Math. I hope to pursue a career in accounting and/or operations.
-                          Next summer I will be an intern in EY's audit service line in
-                          San Francisco. I enjoy seeing the natural patterns of the
-                          world through numbers, but I also love playing piano, singing,
-                          and running. Feel free to reach out if you'd like to chat!
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/anthony-serven/
-                          "><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <!-- Irene -->
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/irene-sp26.png" alt="Irene Li
-                    portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Irene Li
-                        </h5>
-                        <span class="h6 role">Project Manager</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hi! My name is Irene Li and I'm a sophomore intending to study Statistics and Public Health.
-                          I'm interested in the application of data analysis with biology and am hoping to work in
-                          clinical trials in the future. In the past couple semesters, I've worked on PBL's Lenovo and
-                          Life360 client teams to deliver strategy and marketing insights. Outside of PBL, I enjoy
-                          listening to music, hanging out with friends, and trying new drink places. Feel free to reach
-                          out if you'd like to chat!
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/irenelii/
-                          "><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <!-- Joline -->
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/joline-sp26.png"
-                    alt="Joline Surjorahardjo portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Joline Surjorahardjo</h5>
-                        <span class="h6 role">Project Manager</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hi! My name is Joline, and I'm a junior majoring in Cognitive Science and Linguistics. My
-                          professional interests center around strategic marketing, UI/UX design, and academia in
-                          computational linguistics and embodied cognition. In my free time I love cooking new recipes,
-                          raving, camping and going to corepower. Feel free to reach out for a coffee chat or if you
-                          have any questions :)
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/ilonasurjorahardjo/
-                          "><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <!-- Aiden -->
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/aiden-sp26.png"
-                    alt="Aiden Park portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Aiden Park</h5>
-                        <span class="h6 role">Project Manager</span>
-                      </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hi! My name is Aiden and I'm currently a sophomore studying Business Administration and Data
-                          Science. I’m interested in strategy consulting and product management, particularly within
-                          finance and tech. In my free time, you’ll usually find me cooking, eating, or trying to get
-                          better at golf and pickleball. Feel free to reach out if you want to chat or have any
-                          questions!
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="https://www.linkedin.com/in/aiden-park/
-                          "><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
+                    </figcaption>
+                  </figure>
+                </div>
             </div>
           </section>
 
@@ -811,57 +931,109 @@
             </div>
             <div class="row">
               <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/lucasfa25.jpeg"
-                    alt="Lucas Chang portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Lucas Chang</h5>
-                        <span class="h6 role">Media Chair</span>
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/hannah-fa26.jpg"
+                      alt="Hannah Ku portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Hannah Ku</h5>
+                          <span class="h6 role">Media Chair</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hi! I'm Hannah, a Junior studying Economics. My professional interests
+                            include product management/marketing, and consulting. In my free time, I
+                            love baking, thrifting, running/gymming, and knitting.
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/hannah-ku/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hey, my name is Lucas and I’m a sophomore majoring in
-                          Economics and Data Science (classic). My professional
-                          interests include consulting, product management, and
-                          data analytics, but I’m still trying new things out.
-                          Outside of school, I’m really into pickleball, distance
-                          running, soccer, and backpacking!
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="www.linkedin.com/in/lucashchang
-                          "><i class="fab fa-linkedin"></i></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/justin-fa26.jpg"
+                      alt="Justin Nguyen portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Justin Nguyen</h5>
+                          <span class="h6 role">Media Chair</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hey! My name is Justin Nguyen, and I am studying Mechanical Engineering. I
+                            am passionate about biotech, medical devices, and startup culture. I
+                            currently do mechatronics research here at Berkeley where I work on hands
+                            on projects that involve CAD and coding. I love taking pictures, anything
+                            creative and playing all sports with my great friends! Reach out anytime
+                            for questions!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/justinnguyentmp/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
-                <figure class="bio-card">
-                  <img class="w-100 bio-rect-img" src="assets/img/portraits/[PBL] Member/maia-sp26.png" alt="Maia Lee
-                    portrait" />
-                  <figcaption class="pb-3 mx-2 caption text-light">
-                    <div class="">
-                      <div class="bio-visible rounded-top py-3 px-1">
-                        <h5 class="h5">Maia Lee
-                        </h5>
-                        <span class="h6 role">Media Chair</span>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-11 col-sm-7 col-md-6 mx-auto toFadeIn">
+                  <figure class="bio-card">
+                    <img
+                      class="w-100 bio-rect-img"
+                      src="assets/img/portraits/caren-fa26.jpg"
+                      alt="Caren Lee portrait"
+                      loading="lazy"
+                      decoding="async"
+                    width="900" height="1200" />
+                    <figcaption class="pb-3 mx-2 caption text-light">
+                      <div class="">
+                        <div class="bio-visible rounded-top py-3 px-1">
+                          <h5 class="h5">Caren Lee</h5>
+                          <span class="h6 role">Media Chair</span>
+                        </div>
+                        <div class="bio-hidden">
+                          <p>
+                            Hi, my name is Caren Lee and I’m currently a junior majoring in Econ and
+                            Dance. My career goals are towards marketing specifically in the fashion,
+                            lifestyle, and entertainment industries. My hobbies include dance, going
+                            to corepower, and trying new foods with friends! Feel free to reach out
+                            with any questions at all!
+                          </p>
+                          <a
+                            class="text-light h4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/carenklee/"
+                            ><i class="fab fa-linkedin"></i
+                          ></a>
+                        </div>
                       </div>
-                      <div class="bio-hidden">
-                        <p>
-                          Hello! I’m Maia, a sophomore studying Media Studies & Political Economy. Career-wise, I’m
-                          currently interested in product management/marketing and strategy consulting. When I’m not
-                          studying at a café (shoutout 1951), you can find me thrifting, doomscrolling Pinterest, or
-                          sidequesting with friends!
-
-                        </p>
-                        <a class="text-light h4" target="_blank" rel="noopener noreferrer" class="text-warning" href="linkedin.com/in/m4ia
-                          "><i class="fab fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
+                    </figcaption>
+                  </figure>
+                </div>
             </div>
           </section>
         </div>
@@ -918,15 +1090,16 @@
             href="https://www.linkedin.com/in/priscilla-chang/">Priscilla Chang</a>
         </div>
         <div>
-          Redesigned 2025 by
+          Redesigned 2026 by
           <a target="_blank" rel="noopener noreferrer" class="text-warning"
-            href="https://www.linkedin.com/in/hua-kathleen/">Kathleen Hua</a>
-          and
+            href="https://www.linkedin.com/in/hua-kathleen/">Kathleen Hua</a>,
           <a target="_blank" rel="noopener noreferrer" class="text-warning"
-            href="https://www.linkedin.com/in/karora27/">Krish Arora</a>
+            href="https://www.linkedin.com/in/karora27/">Krish Arora</a>, and
+          <a target="_blank" rel="noopener noreferrer" class="text-warning"
+            href="https://www.linkedin.com/in/ayush-gupta-berkeley/">Ayush Gupta</a>
         </div>
         <div>
-          © PBL 2025
+          © PBL 2026
         </div>
       </div>
     </div>

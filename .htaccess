@@ -49,4 +49,21 @@ Redirect /member-app https://docs.google.com/forms/d/e/1FAIpQLSfM4EMfxaXacqLtxIM
 
 # Fall 2023 Recruitment
 Redirect /interest https://docs.google.com/forms/d/e/1FAIpQLScr8NWIOtvcOyvY2mXVQ4HHH5Xk1P-cVG5_NbIiOXiVzoLbww/viewform
-Redirect /coffeechats https://tinyurl.com/pblcoffeechat
+# Fall 2026 Recruitment
+Redirect /coffeechats https://docs.google.com/forms/d/e/1FAIpQLSdIQV7wnBfUnBmxPNdhXihK48pFnTzwBIn1lv3oJmRZb-nJtg/viewform?usp=dialog
+
+# --- .htaccess caching rules --------------------------------------------
+# Without an explicit Cache-Control, browsers apply "heuristic" caching and
+# guess a lifetime from the file's age - which is why edited pages kept
+# showing the old version until a manual reload. Guarded by IfModule so a
+# missing module can never take the site down.
+<IfModule mod_headers.c>
+  # Pages and code: cache, but always revalidate first (cheap 304 if unchanged)
+  <FilesMatch "\.(html|css|js)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  # Images and fonts: safe to hold for a day
+  <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp|ico|woff|woff2|ttf)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+</IfModule>
