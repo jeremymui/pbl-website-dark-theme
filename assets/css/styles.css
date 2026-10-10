@@ -1427,3 +1427,56 @@ h1 span{font-weight:normal}
 .nowrap-link {
   white-space: nowrap;
 }
+
+/* Promo video poster. The embed is only inserted on click, so the home page
+   loads a single image rather than a third-party player. */
+.video-facade {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  background: #000;
+  border: 0;
+}
+
+.video-facade img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-facade__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 78px;
+  height: 78px;
+  margin: -39px 0 0 -39px;
+  border-radius: 50%;
+  background: rgba(20, 20, 40, 0.72);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.video-facade__play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+  border-left: 26px solid #fff;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+}
+
+.video-facade:hover .video-facade__play,
+.video-facade:focus .video-facade__play {
+  background: rgba(20, 20, 40, 0.9);
+  transform: scale(1.08);
+}
+
+.video-facade:focus {
+  outline: 3px solid var(--yellow);
+  outline-offset: 2px;
+}
